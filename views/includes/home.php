@@ -13,8 +13,8 @@
             margin-top: 50px;
             position: relative;
             width: 100%;
-            height: 400px; /* Ajustez la hauteur selon vos besoins */
-            background-image: url('../../images/welcome.jpg'); /* Remplacez par le chemin de votre image */
+            height: 400px; 
+            background-image: url('../../images/welcome.jpg'); 
             background-size: cover;
             background-position: center;
         }
@@ -25,10 +25,9 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background-color: rgba(0, 0, 0, 0.5); /* Couleur d'ombrage (ajustez l'opacité) */
+            background-color: rgba(0, 0, 0, 0.5); 
         }
 
-        /* Ajoutez votre contenu ici (texte, boutons, etc.) */
         #content {
             position: absolute;
             top: 50%;
