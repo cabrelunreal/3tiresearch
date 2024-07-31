@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    
+    <style>
+
+    </style>
+</head>
+<body>
+    <div class="w-full bg-green-900 text-white pt-3 pb-8">
+        <div class="md:w-6/12 m-auto py-8 px-12">
+            <h5 class="text-lg text-center py-4">Get helpful tips and info from our newsletter!</h5>
+            <form action="" class="text-2lg flex">
+                <div class="flex border-b-2 w-full">
+                    <input type="text" class="bg-transparent focus:outline-none border-none w-full md:w-full py-1" placeholder="Enter your Email">
+                    <button type="submit" class="w-full justify-end flex">Sign up</button>
+                </div>
+            </form>
+        </div>
+
+        <div class="md:w-9/12 m-auto flex flex-col md:flex-row px-12">
+            <!-- Navigation Section -->
+            <div class="w-full md:w-3/12 mb-4 md:mb-0">
+                <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
+                <button id="nav-toggle" class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
+                    <span>Navigation</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="nav-menu" class="hidden mt-2 md:block">
+                    <ul class="text-lg md:text-sm">
+                        <li class="hover:underline"><a href="#">Home</a></li>
+                        <li class="hover:underline"><a href="#">About</a></li>
+                        <li class="hover:underline"><a href="#">Services</a></li>
+                        <li class="hover:underline"><a href="#">Contact Us</a></li>
+                        <li class="hover:underline"><a href="#">Blog</a></li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Services Section -->
+            <div class="w-full md:w-4/12 mb-4 md:mb-0">
+                <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
+                <button id="services-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
+                    <span>Services</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="services-menu" class="hidden mt-2 md:block">
+                    <ul class="text-lg md:text-sm">
+                        <li class="hover:underline cursor-pointer">Quantitative Services</li>
+                        <li class="hover:underline cursor-pointer">Quality Control</li>
+                        <li class="hover:underline cursor-pointer">Programming & Analysis</li>
+                        <li class="hover:underline cursor-pointer">Quality Services</li>
+                        <li class="hover:underline cursor-pointer">Automation & Visualization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Support Section -->
+            <div class="w-full md:w-4/12 mb-4 md:mb-0">
+                <h5 class="text-lg capitalize py-1 hidden md:block">Support</h5>
+                <button id="support-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
+                    <span>Support</span>
+                    <i class="fa-solid fa-chevron-down"></i>
+                </button>
+                <div id="support-menu" class="hidden mt-2 md:block">
+                    <ul class="text-lg md:text-sm">
+                        <li class="hover:underline cursor-pointer">Quantitative Services</li>
+                        <li class="hover:underline cursor-pointer">Quality Control</li>
+                        <li class="hover:underline cursor-pointer">Programming & Analysis</li>
+                        <li class="hover:underline cursor-pointer">Quality Services</li>
+                        <li class="hover:underline cursor-pointer">Automation & Visualization</li>
+                    </ul>
+                </div>
+            </div>
+
+            <!-- Logo and Social Icons -->
+            <div class="w-full md:w-3/12">
+                <h5 class="text-lg capitalize py-1">
+                    <a href="#">
+                        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png" class="w-40" alt="LOGO">
+                    </a>
+                </h5>
+                <div class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0">
+                    <a href="https://www.facebook.com/yourcompany" target="_blank" class="social-icon">
+                        <i class="fa-brands fa-facebook text-xl"></i>
+                    </a>
+                    <a href="https://www.linkedin.com/company/yourcompany" target="_blank" class="social-icon linkedin">
+                        <i class="fa-brands fa-linkedin text-xl"></i>
+                    </a>
+                    <a href="https://www.youtube.com/user/yourcompany" target="_blank" class="social-icon youtube">
+                        <i class="fa-brands fa-youtube text-xl"></i>
+                    </a>
+                    <a href="https://www.instagram.com/yourcompany" target="_blank" class="social-icon instagram">
+                        <i class="fa-brands fa-instagram text-xl"></i>
+                    </a>
+                    <a href="https://twitter.com/yourcompany" target="_blank" class="social-icon twitter">
+                        <i class="fa-brands fa-twitter text-xl"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="w-full bg-green-900 py-1">
+        <div class="w-9/12 border-t-2 py-12 m-auto text-white" style="font-size: 13px;">
+            <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
+            <div class="w-full md:w-7/12 mt-4">
+                <p class="py-2">3TIResearch offers comprehensive market research services and self-service tools to 
+                    support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
+                    Your use of our tools and services is subject to our <a href="#" class="underline">Terms of Use</a> and <a href="#" class="underline">Privacy Policy</a>.</p>
+                <p class="py-4">Your Privacy Choices</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById('nav-toggle').addEventListener('click', function() {
+            document.getElementById('nav-menu').classList.toggle('hidden');
+        });
+        document.getElementById('services-toggle').addEventListener('click', function() {
+            document.getElementById('services-menu').classList.toggle('hidden');
+        });
+        document.getElementById('support-toggle').addEventListener('click', function() {
+            document.getElementById('support-menu').classList.toggle('hidden');
+        });
+    </script>
+</body>
+</html>
