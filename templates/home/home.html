@@ -8,6 +8,9 @@
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+
     
     <style>
 
@@ -127,10 +130,10 @@
                 </div>
                 <div class="hidden md:flex py-3 w-full md:w-auto">
                     <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 font-semibold text-gray-700">
-                        <li><a href="home.php">Home</a></li>
-                        <li><a href="about.php">About</a></li>
+                        <li><a href="#">Home</a></li>
+                        <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
-                        <li><a href="../contact/contact.html">Contact Us</a></li>
+                        <li><a href="#contact">Contact Us</a></li>
                         <li><a href="blog.php">Blog</a></li>
                     </ul>
                 </div>
@@ -145,10 +148,10 @@
                 <i class="fa-solid fa-xmark"></i>
             </button>
             <ul class="flex flex-col space-y-4 font-bold text-gray-700">
-                <li><a href="home.php">Home</a></li>
-                <li><a href="about.php">About</a></li>
+                <li><a href="#">Home</a></li>
+                <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
-                <li><a href="contact.php">Contact Us</a></li>
+                <li><a href="#contact">Contact Us</a></li>
                 <li><a href="blog.php">Blog</a></li>
             </ul>
         </div>
@@ -180,7 +183,7 @@
                 <h2 class="md:text-3xl text-lg font-bold">Discover a range of services designed to provide actionable insights and drive growth. </h2>
             </div>
         </div>
-        <div class="grid grid-cols-1 w-full px-12 md:grid-cols-3 md:px-4 gap-4 md:w-9/12 m-auto">
+        <div class="grid grid-cols-1 w-full px-12 md:grid-cols-3 md:px-4 gap-4 md:w-9/12 m-auto"  data-aos="fade-up">
             <div class="px-4">
                 <h2 class="md:text-xl text-2lg py-2 font-bold">Quantitative Analysis</h2>
                 <p>Our quantitative analysis services leverage statistical methods to transform raw data into actionable insights. By meticulously examining numerical data, we uncover patterns, trends, and correlations that inform strategic decision-making.</p>
@@ -229,24 +232,24 @@
         </div>
     </div>
 
-   <div class="w-full bg-gray-50"> 
+   <div class="w-full bg-gray-50" id="about"> 
         <div class="py-12 w-full m-auto">
             <div class="w-9/12 m-auto py-6 text-center">
                 <h2 class="font-semibold text-lg">Passion and Purpose: Our Guiding Principles</h2>
                 <p>Passion fuels our drive. Purpose guides our mission.</p>
             </div>
             <div class="grid md:grid-cols-3 w-9/12 m-auto gap-8">
-                <div class="border border-gray-600 px-6 py-8">
+                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
                     <h2 class="text-xl py-2 font-bold">Teamwork: Our cornerstone</h2>
                     <p>Collaboration is our driving force. We believe in the power of diverse minds working together. Our team is united by shared goals and a commitment to excellence. Together, we create exceptional outcomes.</p>
                     <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
                 </div>
-                <div class="border border-gray-600 px-6 py-8">
+                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
                     <h2 class="text-xl py-2 font-bold">Professionals</h2>
                     <p>Our team comprises seasoned industry experts. With deep knowledge and proven skills, we deliver exceptional research solutions. Our professionals are passionate about uncovering insights that drive business growth. Trust in our expertise for reliable results.</p>
                     <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
                 </div>
-                <div class="border border-gray-600 px-6 py-8">
+                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
                     <h2 class="text-xl py-2 font-bold">Leadership</h2>
                     <p>Our leaders inspire and empower. With a clear vision, they guide our team towards success. Their expertise and strategic thinking drive innovation. Strong leadership is the foundation of our company.</p>
                     <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
@@ -255,7 +258,7 @@
         </div>
     </div>
 
-    <div class="md:w-9/12 w-full mx-auto my-12 p-6">
+    <div class="md:w-9/12 w-full mx-auto my-12 p-6" id="faq">
         <h1 class="text-lg md:text-xl font-semibold mb-6 pb-4 border-black border-b-4 ">Frequently Asked Questions</h1>
         
         <div class="faq-item border-b py-4">
@@ -320,8 +323,8 @@
         </div>
     </div>
 
-    <div class="w-9/12 m-auto py-4 text-xl font-semibold"><h2>Questions?</h2></div>
-    <div class=" grid md:grid-cols-2 gap-4 pb-12 w-9/12 m-auto">
+    <div class="w-9/12 m-auto py-4 text-xl font-semibold" id="contact"><h2>Questions?</h2></div>
+    <div class=" grid md:grid-cols-2 gap-4 pb-12 w-9/12 m-auto" data-aos="fade-up">
         <div class="bg-gray-50 px-12 py-12">
             <h2 class="text-lg font-semibold md:text-lg">Ask an Expert</h2>
             <p>Get the right guidance with an expert by your side.</p>
@@ -478,6 +481,10 @@
     document.getElementById('support-toggle').addEventListener('click', function() {
         document.getElementById('support-menu').classList.toggle('hidden');
     });
+
+    
+  AOS.init();
+
 </script>
 
 </body>
