@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chatbot Modal Example</title>
+  <style>
+    /* styles.css */
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+    }
+    
+    .chatbot-button {
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      width: 60px;
+      height: 60px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 0;
+      font-size: 24px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      animation: none; /* Initially no animation */
+    }
+    
+    .chatbot-button:hover {
+      background-color: #0056b3;
+    }
+
+    .vibrate {
+      animation: vibrate 0.5s infinite;
+    }
+
+    @keyframes vibrate {
+      0% { transform: translateX(0); }
+      25% { transform: translateX(-5px); }
+      50% { transform: translateX(5px); }
+      75% { transform: translateX(-5px); }
+      100% { transform: translateX(0); }
+    }
+
+    .chatbot-modal {
+      display: none;
+      position: fixed;
+      bottom: 30px;
+      right: 30px;
+      background-color: rgba(0, 0, 0, 0.5);
+      z-index: 1000;
+      width: 400px;
+      height: 500px;
+      border-radius: 8px;
+    }
+    
+    .chatbot-modal-content {
+      background-color: white;
+      padding: 20px;
+      height: 100%;
+      border-radius: 8px;
+      position: relative;
+    }
+    
+    .close-button {
+      position: absolute;
+      top: 10px;
+      right: 10px;
+      font-size: 24px;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <!-- Your page content here -->
+
+  <!-- Chatbot Button -->
+  <button id="chatbot-button" class="chatbot-button">
+    <img src="chat-icon.png" alt="Chat" style="width: 24px; height: 24px;">
+  </button>
+
+  <!-- Chatbot Modal -->
+  <div id="chatbot-modal" class="chatbot-modal">
+    <div class="chatbot-modal-content">
+      <span class="close-button">&times;</span>
+      <iframe src="https://copilotstudio.microsoft.com/environments/Default-12f2971e-cac5-47a4-8d68-f1b22042f83e/bots/cr588_3TiAssistant/webchat?__version__=2"
+        frameborder="0" style="width: 98%; height: 100%;"></iframe>
+    </div>
+  </div>
+
+  <script>
+    document.addEventListener('DOMContentLoaded', function() {
+      const chatbotButton = document.getElementById('chatbot-button');
+      const chatbotModal = document.getElementById('chatbot-modal');
+      const closeButton = document.querySelector('.close-button');
+
+      // Automatically open the modal on page load
+      chatbotModal.style.display = 'block';
+      // Remove vibrating effect when modal is opened
+      chatbotButton.classList.remove('vibrate');
+
+      chatbotButton.addEventListener('click', function() {
+        chatbotModal.style.display = 'block';
+        // Remove vibrating effect when modal is opened
+        chatbotButton.classList.remove('vibrate');
+      });
+
+      closeButton.addEventListener('click', function() {
+        chatbotModal.style.display = 'none';
+        // Add vibrating effect when modal is closed
+        chatbotButton.classList.add('vibrate');
+      });
+
+      window.addEventListener('click', function(event) {
+        if (event.target === chatbotModal) {
+          chatbotModal.style.display = 'none';
+          // Add vibrating effect when modal is closed
+          chatbotButton.classList.add('vibrate');
+        }
+      });
+
+      // Function to show notification
+      function showNotification() {
+        if (Notification.permission === "granted") {
+          new Notification("New message from the chatbot!");
+        } else if (Notification.permission !== "denied") {
+          Notification.requestPermission().then(function(permission) {
+            if (permission === "granted") {
+              new Notification("New message from the chatbot!");
+            }
+          });
+        }
+      }
+
+      // Simulate receiving a new message after 5 seconds
+      setTimeout(showNotification, 5000);
+    });
+  </script>
+</body>
+</html>
