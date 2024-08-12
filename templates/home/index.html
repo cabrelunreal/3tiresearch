@@ -201,7 +201,7 @@
                         <li><a href="#about">About</a></li>
                         <li><a href="#services">Services</a></li>
                         <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="articles.html">Blog</a></li>
+                        <li><a href="articles.html">Articles</a></li>
                     </ul>
                 </div>
             </nav>
@@ -214,12 +214,12 @@
             <button id="menu-close" class="absolute top-4 right-4 text-gray-700 text-2xl">
                 <i class="fa-solid fa-xmark"></i>
             </button>
-            <ul class="flex flex-col space-y-4 font-bold text-gray-700">
-                <li><a href="#">Home</a></li>
+            <ul class="flex flex-col space-y-4 font-semibold text-gray-700">
+                <li><a href="index.html">Home</a></li>
                 <li><a href="#about">About</a></li>
                 <li><a href="#services">Services</a></li>
                 <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="articles.html">Blog</a></li>
+                <li><a href="articles.html">Articles</a></li>
             </ul>
         </div>
     </div>
@@ -444,10 +444,10 @@
                     <div id="nav-menu" class="hidden mt-2 md:block">
                         <ul class="text-lg md:text-sm">
                             <li class="hover:underline"><a href="#">Home</a></li>
-                            <li class="hover:underline"><a href="#">About</a></li>
-                            <li class="hover:underline"><a href="#services">Services</a></li>
-                            <li class="hover:underline"><a href="#">Contact Us</a></li>
-                            <li class="hover:underline"><a href="#">Blog</a></li>
+                            <li class="hover:underline"><a href="about.html">About</a></li>
+                            <li class="hover:underline"><a href="index.hmtl">Services</a></li>
+                            <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
+                            <li class="hover:underline"><a href="articles.html">Articles</a></li>
                         </ul>
                     </div>
                 </div>
@@ -535,10 +535,8 @@
         const chatbotModal = document.getElementById('chatbot-modal');
         const closeButton = document.querySelector('.close-button');
   
-        // Automatically open the modal on page load
-        chatbotModal.style.display = 'block';
         // Remove vibrating effect when modal is opened
-        chatbotButton.classList.remove('vibrate');
+        chatbotButton.classList.add('vibrate');
   
         chatbotButton.addEventListener('click', function() {
           chatbotModal.style.display = 'block';
