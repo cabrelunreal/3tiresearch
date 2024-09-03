@@ -161,21 +161,38 @@
             font-size: 24px;
             cursor: pointer;
           } 
+
+
+        /* Basic styling for the Google Translate widget */
+        #google_translate_element {
+            margin: 20px;
+            text-align: right;
+        }
+        /* Optional: Customize the font and size */
+        .goog-te-gadget {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        /* Optional: Hide Google branding (if allowed by TOS) */
+        .goog-te-gadget img {
+            display: none;
+        }
     </style>
 </head>
 <body>
 
 <!-- Before Header -->
     <div class="w-full bg-green-800 text-white">
-        <div class="w-full max-w-screen-lg mx-auto px-4">
+        <div class="w-9/12 mx-auto px-4">
             <div class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1">
                 <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
                     <p><a href="#">(+225) 07 58 80 14 10</a></p>
                     <p class="md:px-4"><a href="">contact@3tiresearch.com</a></p>
                 </div>
-                <div class="flex space-x-4 mt-4 justify-center md:mt-0">
+                <div class="flex items-center space-x-4 mt-4 justify-center md:mt-0">
                     <a href=""><i class="fa-brands fa-facebook"></i></a>
                     <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                    <div id="google_translate_element"></div>
                 </div>
             </div>
         </div>
@@ -183,7 +200,7 @@
 
 <!-- Header -->
     <div class="w-full py-2 shadow-md">
-        <div class="w-full max-w-screen-lg mx-auto px-4">
+        <div class="w-9/12 mx-auto px-4">
             <nav class="flex items-center justify-between">
                 <div>
                     <a href="#">
@@ -521,6 +538,16 @@
 
 <!-- JavaScript for Toggle Menu -->
 <script>
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en', // Default language of the page
+            includedLanguages: 'en,fr', // Languages to include
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+    }
+
+
     function redirectToService1() {
         window.location.href = "service.html#service1";
     }
@@ -634,6 +661,7 @@
   AOS.init();
 
 </script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
 
 </body>
 </html>
