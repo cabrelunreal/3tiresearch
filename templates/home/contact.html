@@ -76,8 +76,8 @@
                             <p class="md:px-4"><a href="">contact@3tiresearch.com</a></p>
                         </div>
                         <div class="flex space-x-4 mt-4 justify-center md:mt-0">
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/3tiresearch/" type="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" type="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -158,10 +158,10 @@
                     <h2 class="text-3xl py-2 text-semibold">Leave us a message</h2>
                     <p class="text-lg py-4">We are available and ready to listen to you. Write to us or call us now!</p>
                     <ul>
-                        <li class="py-2"><i class="fas fa-map-marker-alt"  style="padding-right: 10px;"></i>Ivory Coast</li>
+                        <!-- <li class="py-2"><i class="fas fa-map-marker-alt"  style="padding-right: 10px;"></i>Ivory Coast</li> -->
                         <li class="py-2"><i class="fas fa-envelope"  style="padding-right: 10px;"></i>contact@3tiresearch.com</li>
                         <li class="py-2"><i class="fab fa-whatsapp" style="padding-right: 10px;"></i>+ 225 27 22 51 19 </li>
-                        <li class="py-2"><i class="fas fa-phone" style="padding-right: 8px;"></i> + 221 33 867 55 75</li>
+                        <!-- <li class="py-2"><i class="fas fa-phone" style="padding-right: 8px;"></i> + 221 33 867 55 75</li> -->
                     </ul>
                 </div>
                 <div class="">
@@ -180,7 +180,11 @@
                             <textarea name="message" class="border w-full p-2 rounded-sm h-48 focus:outline-none" id="message" placeholder="Enter your message"></textarea>
                         </div>
                         <div class="justify-end w-full pt-2">
-                            <input type="submit" class="px-6 shadow-md py-3 bg-green-700 text-white text-semibold rounded-sm" value="send">
+                           
+                                <a href="mailto:sanguojoseph17@gmail.com;" class="px-6 py-3 bg-green-700 text-white font-semibold rounded-sm shadow-md transition duration-200 transform hover:scale-105 hover:bg-green-800 hover:shadow-lg">
+                                  Send
+                                </a>
+                              
                         </div>
                     </form>
                 </div>
@@ -199,7 +203,7 @@
                     </form>
                 </div>
     
-                <div class="md:w-9/12 w-full m-auto flex flex-col md:flex-row px-12 py-8">
+                <div class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8">
                     <!-- Navigation Section -->
                     <div class="w-full md:w-3/12 mb-4 md:mb-0">
                         <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
@@ -209,9 +213,9 @@
                         </button>
                         <div id="nav-menu" class="hidden mt-2 md:block">
                             <ul class="text-lg md:text-sm">
-                                <li class="hover:underline"><a href="index.html">Home</a></li>
+                                <li class="hover:underline" ><a href="#">Home</a></li>
                                 <li class="hover:underline"><a href="about.html">About</a></li>
-                                <li class="hover:underline"><a href="service.html">Services</a></li>
+                                <li class="hover:underline"><a href="index.hmtl">Services</a></li>
                                 <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
                                 <li class="hover:underline"><a href="articles.html">Articles</a></li>
                             </ul>
@@ -227,32 +231,19 @@
                         </button>
                         <div id="services-menu" class="hidden mt-2 md:block">
                             <ul class="text-lg md:text-sm">
-                                <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                                <li class="hover:underline cursor-pointer">Quality Control</li>
-                                <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                                <li class="hover:underline cursor-pointer">Quality Services</li>
-                                <li class="hover:underline cursor-pointer">Automation & Visualization</li>
+                                <button onclick="redirectToService1()"><li class="hover:underline cursor-pointer">Quantitative Services</li></button>
+                                <button onclick="redirectToService2()"><li class="hover:underline cursor-pointer">Independent Quality Control</li></button>
+                                <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Programming & Analysis</li></button>
+                                <button onclick="redirectToService5()"><li class="hover:underline cursor-pointer">Qualitative Services</li></button>
+                                <button onclick="redirectToService6()"><li class="hover:underline cursor-pointer">Automation & Visualization data</li></button>
+                                <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Type of Quantitative Study</li></button>
+    
                             </ul>
                         </div>
                     </div>
     
                     <!-- Support Section -->
-                    <div class="w-full md:w-4/12 mb-4 md:mb-0">
-                        <h5 class="text-lg capitalize py-1 hidden md:block">Support</h5>
-                        <button id="support-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                            <span>Support</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <div id="support-menu" class="hidden mt-2 md:block">
-                            <ul class="text-lg md:text-sm">
-                                <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                                <li class="hover:underline cursor-pointer">Quality Control</li>
-                                <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                                <li class="hover:underline cursor-pointer">Quality Services</li>
-                                <li class="hover:underline cursor-pointer">Automation & Visualization</li>
-                            </ul>
-                        </div>
-                    </div>
+                   
     
                     <!-- Logo and Social Icons -->
                     <div class="w-full md:w-3/12">
@@ -290,6 +281,33 @@
 
     <!-- JavaScript for Toggle Menu -->
     <script>
+         function redirectToService1() {
+        window.location.href = "service.html#service1";
+    }
+    
+    function redirectToService2() {
+        window.location.href = "service.html#service2";
+    }
+
+    
+    function redirectToService3() {
+        window.location.href = "service.html#service3";
+    }
+
+    
+    function redirectToService4() {
+        window.location.href = "service.html#service4";
+    }
+
+    
+    function redirectToService5() {
+        window.location.href = "service.html#service5";
+    }
+
+    
+    function redirectToService6() {
+        window.location.href = "service.html#service6";
+    }
         document.getElementById('nav-toggle').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('hidden');
         });

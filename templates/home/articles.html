@@ -76,8 +76,8 @@
                             <p class="md:px-4"><a href="">contact@3tiresearch.com</a></p>
                         </div>
                         <div class="flex space-x-4 mt-4 justify-center md:mt-0">
-                            <a href=""><i class="fa-brands fa-facebook"></i></a>
-                            <a href=""><i class="fa-brands fa-linkedin"></i></a>
+                            <a href="https://www.facebook.com/3tiresearch/" type="_blank"><i class="fa-brands fa-facebook"></i></a>
+                            <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" type="_blank"><i class="fa-brands fa-linkedin"></i></a>
                         </div>
                     </div>
                 </div>
@@ -186,7 +186,8 @@
             <div class="bg-gray-50 px-12 py-12">
                 <h2 class="text-2xl">Ask an Expert</h2>
                 <p>Get the right guidance with an expert by your side.</p>
-                <button class="py-3 bg-green-700 rounded-full px-8 text-white my-4">Get some help</button>
+                <a href="contact.html"><button class="py-3 bg-green-700 rounded-full px-8 text-white my-4">Get some help</button></a>
+
             </div>
             <div class="bg-gray-50 px-12 py-12">
                 <h2 class="text-2xl">Call an agent at (+221) 33 867 55 75</h2>
@@ -194,7 +195,6 @@
                 <p>Weekends: 7 a.m.-4 p.m. PT</p>
             </div>
         </div>
-
 
         <div class="footer-container">
             <div class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content">
@@ -208,7 +208,7 @@
                     </form>
                 </div>
     
-                <div class="md:w-9/12 w-full m-auto flex flex-col md:flex-row px-12 py-8">
+                <div class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8">
                     <!-- Navigation Section -->
                     <div class="w-full md:w-3/12 mb-4 md:mb-0">
                         <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
@@ -218,11 +218,11 @@
                         </button>
                         <div id="nav-menu" class="hidden mt-2 md:block">
                             <ul class="text-lg md:text-sm">
-                                <li class="hover:underline"><a href="index.html">Home</a></li>
+                                <li class="hover:underline" ><a href="#">Home</a></li>
                                 <li class="hover:underline"><a href="about.html">About</a></li>
-                                <li class="hover:underline"><a href="service.html">Services</a></li>
+                                <li class="hover:underline"><a href="index.hmtl">Services</a></li>
                                 <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
-                                <li class="hover:underline"><a href="articles.html">Blog</a></li>
+                                <li class="hover:underline"><a href="articles.html">Articles</a></li>
                             </ul>
                         </div>
                     </div>
@@ -236,32 +236,19 @@
                         </button>
                         <div id="services-menu" class="hidden mt-2 md:block">
                             <ul class="text-lg md:text-sm">
-                                <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                                <li class="hover:underline cursor-pointer">Quality Control</li>
-                                <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                                <li class="hover:underline cursor-pointer">Quality Services</li>
-                                <li class="hover:underline cursor-pointer">Automation & Visualization</li>
+                                <button onclick="redirectToService1()"><li class="hover:underline cursor-pointer">Quantitative Services</li></button>
+                                <button onclick="redirectToService2()"><li class="hover:underline cursor-pointer">Independent Quality Control</li></button>
+                                <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Programming & Analysis</li></button>
+                                <button onclick="redirectToService5()"><li class="hover:underline cursor-pointer">Qualitative Services</li></button>
+                                <button onclick="redirectToService6()"><li class="hover:underline cursor-pointer">Automation & Visualization data</li></button>
+                                <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Type of Quantitative Study</li></button>
+    
                             </ul>
                         </div>
                     </div>
     
                     <!-- Support Section -->
-                    <div class="w-full md:w-4/12 mb-4 md:mb-0">
-                        <h5 class="text-lg capitalize py-1 hidden md:block">Support</h5>
-                        <button id="support-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                            <span>Support</span>
-                            <i class="fa-solid fa-chevron-down"></i>
-                        </button>
-                        <div id="support-menu" class="hidden mt-2 md:block">
-                            <ul class="text-lg md:text-sm">
-                                <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                                <li class="hover:underline cursor-pointer">Quality Control</li>
-                                <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                                <li class="hover:underline cursor-pointer">Quality Services</li>
-                                <li class="hover:underline cursor-pointer">Automation & Visualization</li>
-                            </ul>
-                        </div>
-                    </div>
+                   
     
                     <!-- Logo and Social Icons -->
                     <div class="w-full md:w-3/12">
@@ -299,6 +286,33 @@
 
     <!-- JavaScript for Toggle Menu -->
     <script>
+         function redirectToService1() {
+        window.location.href = "service.html#service1";
+    }
+    
+    function redirectToService2() {
+        window.location.href = "service.html#service2";
+    }
+
+    
+    function redirectToService3() {
+        window.location.href = "service.html#service3";
+    }
+
+    
+    function redirectToService4() {
+        window.location.href = "service.html#service4";
+    }
+
+    
+    function redirectToService5() {
+        window.location.href = "service.html#service5";
+    }
+
+    
+    function redirectToService6() {
+        window.location.href = "service.html#service6";
+    }
         document.getElementById('nav-toggle').addEventListener('click', function() {
             document.getElementById('nav-menu').classList.toggle('hidden');
         });
