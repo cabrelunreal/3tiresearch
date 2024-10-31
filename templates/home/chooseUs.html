@@ -1,0 +1,657 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>3TiResearch</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+
+    <style>
+
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+
+        .footer-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.6); 
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: 1;
+        } 
+        
+        .footer-container {
+            position: relative;
+            height: 530px; 
+            overflow: hidden;
+        }
+
+        /* Custom styles for FAQ section */
+        .faq-item {
+            cursor: pointer;
+        }
+        .faq-answer {
+            display: none;
+        }
+        .faq-answer.open {
+            display: block;
+        }
+
+        
+        .footer-content {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            z-index: 10;
+            background-color: rgba(0, 0, 0, 0.6); 
+            padding-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        .footer-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            object-fit: cover; 
+            z-index: 1;
+        } 
+        
+        .header-container {
+            position: relative;
+            height: 330px; 
+            overflow: hidden;
+        }
+
+        .footer-container {
+            position: relative;
+            height: 620px; 
+            overflow: hidden;
+        }
+
+     
+        .chatbot-button {
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 50%;
+            width: 60px;
+            height: 60px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 0;
+            font-size: 24px;
+            cursor: pointer;
+            z-index: 1000;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            animation: none; /* Initially no animation */
+          }
+          
+          .chatbot-button:hover {
+            background-color: #0056b3;
+          }
+      
+          .vibrate {
+            animation: vibrate 0.5s infinite;
+          }
+      
+          @keyframes vibrate {
+            0% { transform: translateX(0); }
+            25% { transform: translateX(-5px); }
+            50% { transform: translateX(5px); }
+            75% { transform: translateX(-5px); }
+            100% { transform: translateX(0); }
+          }
+      
+          .chatbot-modal {
+            display: none;
+            position: fixed;
+            bottom: 30px;
+            right: 30px;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 1000;
+            width: 400px;
+            height: 500px;
+            border-radius: 8px;
+          }
+          
+          .chatbot-modal-content {
+            background-color: white;
+            padding: 20px;
+            height: 100%;
+            border-radius: 8px;
+            position: relative;
+          }
+          
+          .close-button {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            font-size: 24px;
+            cursor: pointer;
+          } 
+
+
+        /* Basic styling for the Google Translate widget */
+        #google_translate_element {
+            margin: 20px;
+            text-align: right;
+        }
+        /* Optional: Customize the font and size */
+        .goog-te-gadget {
+            font-family: Arial, sans-serif;
+            font-size: 14px;
+        }
+        /* Optional: Hide Google branding (if allowed by TOS) */
+        .goog-te-gadget img {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- Before Header -->
+    <div class="w-full bg-green-800 text-white">
+        <div class="w-9/12 mx-auto px-4">
+            <div class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1">
+                <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
+                    <p><a href="#">(+225) 27 22 51 19 33</a></p>
+                    <p class="md:px-4"><a href="mailto:contact@3tiresearch.com;">contact@3tiresearch.com</a></p>
+                </div>
+                <div class="flex items-center space-x-4 mt-4 justify-center md:mt-0">
+                    <a href="https://www.facebook.com/3tiresearch/" type="_blank"><i class="fa-brands fa-facebook"></i></a>
+                    <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" type="_blank"><i class="fa-brands fa-linkedin"></i></a>
+                    <div id="google_translate_element"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!-- Header -->
+    <div class="w-full py-2 shadow-md">
+        <div class="w-9/12 mx-auto px-4">
+            <nav class="flex items-center justify-between">
+                <div>
+                    <a href="#">
+                        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1722448052/3TIgreenPlan_de_travail_1_bhib3u.png" class="w-32" alt="LOGO">
+                    </a>
+                </div>
+                <div class="block md:hidden">
+                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+                        <i class="fa-solid fa-bars text-2xl"></i>
+                    </button>
+                </div>
+                <div class="hidden md:flex py-3 w-full md:w-auto">
+                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 font-semibold text-gray-700">
+                        <li><a href="index.html">Home</a></li>
+                        <li><a href="about.html">About</a></li>
+                        <li><a href="service.html">Services</a></li>
+                        <li><a href="contact.html">Contact Us</a></li>
+                        <li><a href="articles.html">Articles</a></li>
+                    </ul>
+                </div>
+            </nav>
+        </div>    
+    </div>
+
+<!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 md:hidden hidden">
+        <div class="flex flex-col items-center pt-10">
+            <button id="menu-close" class="absolute top-4 right-4 text-gray-700 text-2xl">
+                <i class="fa-solid fa-xmark"></i>
+            </button>
+            <ul class="flex flex-col space-y-4 font-semibold text-gray-700">
+                <li><a href="index.html">Home</a></li>
+                <li><a href="about.html">About</a></li>
+                <li><a href="service.html">Services</a></li>
+                <li><a href="contact.html">Contact Us</a></li>
+                <li><a href="articles.html">Articles</a></li>
+            </ul>
+        </div>
+    </div>
+
+    <div class="header-container ">
+        <div class="w-full bg-black opacity-85 text-white  pb-8 footer-content flex items-center justify-center">
+            <section class="banner w-full flex items-center justify-center text-center text-white">
+                <div class="">
+                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+                        <span class="text-green-400">7</span> Reasons to choose us
+                    </h1>
+                </div>
+            </section>
+        </div>
+
+        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1714529119/principal_1_fhflby.png" alt="Background" class="footer-image">
+    </div>
+
+
+    
+    <div class="w-9/12 pt-24 pb-8 m-auto">
+
+        <h2 class="font-bold text-2xl">
+            Why Do I Need Market Research and Data Collection?
+        </h2>
+    <p>
+        A quality market research company collects data for your business and analyzes it for you; it’s like painting a clear picture of what you need to see to help your business grow. 
+        You need insight for your business – You need to remain strong in your industry and be ready at any time. Here are seven reasons why market research and data collection will benefit your business.
+    </p>
+    </div>    
+    
+   <div class="w-9/12 m-auto">
+    <ol>
+        <li class="py-5">
+            <span class="font-bold text-2xl ">1.	Understand Your Consumers</span> <br>
+        <p class="text-gray-600 mt-2">
+            There are many questions to ask to understand your consumers and ideal customer. Who will buy your service or product? What are their needs? What are their wants? Market research helps you identify your ideal customer, their behaviors, the market size, and what factors will get them to buy your product
+        </p>
+        </li>
+        
+       <li class="py-5">
+        <p class="font-bold text-2xl"> 2. Understand Your Competitors</p>
+        <p class="text-gray-600 mt-2">Your competitors want the same customers that you do, so you need to stay ahead of them! Market research will help you identify the strengths and weaknesses of your business versus your competitor’s strengths and weaknesses. Know your competitor’s approach so you can gain more customers and successfully convert.</P>
+       </li>
+        
+        <li class="py-5">
+            <span class="font-bold text-2xl"> 3. Spot New Trends</span> <br>
+            <p class="text-gray-600 mt-2">You have to stay ahead of competitors, but you also have to stay ahead of the market – and it’s continually evolving. Data collection and market research help you identify the trends in your industry so you can be the first (or the best!) business to capitalize on that trend.</p>
+        </li> 
+        
+        <li class="py-5"><span class="font-bold text-2xl">4.	Minimize Investment Risk</span> <br>
+            <p class="5text-gray-600 mt-2"> A new product involves a lot of investment, which means a lot of risks. Market research and data collection will help you test your product before it launches to give you the best possible outcome. They reduce your risk and maximize your return.</p>
+
+            </li>
+        
+        <li class="py-5">
+            <span class="font-bold text-2xl">5.	Set Benchmarks</span> <br>
+            <p class="text-gray-600 mt-2">You need to monitor your business’s progress closely. You need to know how you perform versus your competitors, what your strengths are, and where there are gaps. Establishing benchmarks gives you a frame of reference to track your progress well. And the best way to set benchmarks is through data collection.</p>
+        </li>
+        
+        <li class="py-5">
+            <span class="font-bold text-2xl">6.	Adapt to Change</span> <br>
+            <p class="text-gray-600 mt-2"> Many businesses fail because they do not adapt to change. Market research keeps an eye on upcoming changes in your industry so you can stay ahead rather than fall behind. Data collection helps you adapt your business to meet the needs of the changing market, too!</p>
+        </li>
+        
+       <li class="py-5"> <span class="font-bold text-2xl">7.	Grow Your Business</span> <br>
+        <p class="text-gray-600 mt-2"> Market research and data collection help you avoid pitfalls and capitalize on success. These services keep you informed of your consumers, competitors, and the changing industry – which helps your business grow! Your business will be more cost-effective, giving it the chance to thrive.</p> </li>
+        
+       </ol>
+    
+   </div>
+   
+
+
+
+
+
+    
+    <!-- Your page content here -->
+
+    <!-- Chatbot Button
+    <button id="chatbot-button" class="chatbot-button bg-green-700 hover:bg-green-900">
+        <p><i class="fa-solid fa-robot"></i></p> 
+    </button>
+
+    <div id="chatbot-modal" class="chatbot-modal">
+        <div class="chatbot-modal-content">
+        <span class="close-button">&times;</span>
+        <iframe src="https://copilotstudio.microsoft.com/environments/Default-12f2971e-cac5-47a4-8d68-f1b22042f83e/bots/cr588_3TiAssistant/webchat?__version__=2"
+            frameborder="0" style="width: 98%; height: 100%;"></iframe>
+        </div>
+    </div> -->
+
+
+
+
+
+
+
+    <!-- <div class=" bg-green-50 py-12">
+        <div class="p-6 rounded-lg w-1/3  m-auto">
+          <h2 class="text-2xl font-semibold text-center mb-4 pb-10">What Our Customers Say</h2>
+         Testimonial Content 
+          <div id="testimonial" class="text-center transition duration-500 transform">
+            
+          </div>
+         
+          <div class="flex justify-center mt-4 space-x-2" id="pagination">
+           
+          </div>
+    
+          <div class="flex justify-between mt-4">
+            <button id="prev" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-500 font-extrabold"><</button>
+            <button id="next" class="px-4 py-2 bg-green-700 text-white rounded hover:bg-green-500 font-extrabold">></button>
+          </div>
+        </div>
+      </div> -->
+
+
+
+      <div class="footer-container mt-24">
+        <div class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content">
+            <div class="md:w-6/12 m-auto py-8 px-12">
+                <h5 class="text-lg text-center py-4">Get helpful tips and info from our newsletter!</h5>
+                <form action="" class="text-2lg flex">
+                    <div class="flex border-b-2 w-full">
+                        <input type="text" class="bg-transparent focus:outline-none border-none w-full md:w-full py-1" placeholder="Enter your Email">
+                        <a href="contact.html"><button type="submit" class="w-24 justify-end flex">Sign up</button></a>
+                    </div>
+                </form>
+            </div>
+
+            <div class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8">
+                <!-- Navigation Section -->
+                <div class="w-full md:w-3/12 mb-4 md:mb-0">
+                    <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
+                    <button id="nav-toggle" class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
+                        <span>Navigation</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="nav-menu" class="hidden mt-2 md:block">
+                        <ul class="text-lg md:text-sm">
+                            <li class="hover:underline" ><a href="index.html">Home</a></li>
+                            <li class="hover:underline"><a href="about.html">About</a></li>
+                            <li class="hover:underline"><a href="service.html">Services</a></li>
+                            <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
+                            <li class="hover:underline"><a href="articles.html">Articles</a></li>
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Services Section -->
+                <div class="w-full md:w-4/12 mb-4 md:mb-0">
+                    <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
+                    <button id="services-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
+                        <span>Services</span>
+                        <i class="fa-solid fa-chevron-down"></i>
+                    </button>
+                    <div id="services-menu" class="hidden mt-2 md:block">
+                        <ul class="text-lg md:text-sm">
+                            <button onclick="redirectToService1()"><li class="hover:underline cursor-pointer">Quantitative Services</li></button>
+                            <button onclick="redirectToService2()"><li class="hover:underline cursor-pointer">Independent Quality Control</li></button>
+                            <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Programming & Analysis</li></button>
+                            <button onclick="redirectToService5()"><li class="hover:underline cursor-pointer">Qualitative Services</li></button>
+                            <button onclick="redirectToService6()"><li class="hover:underline cursor-pointer">Automation & Visualization data</li></button>
+                            <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Type of Quantitative Study</li></button>
+
+                        </ul>
+                    </div>
+                </div>
+
+                <!-- Support Section -->
+               
+
+                <!-- Logo and Social Icons -->
+                <div class="w-full md:w-3/12">
+                    <h5 class="text-lg capitalize py-1">
+                        <a href="index.html">
+                            <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png" class="w-40" alt="LOGO">
+                        </a>
+                    </h5>
+                    <div class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0">
+                        <a href="https://www.facebook.com/3tiresearch/" target="_blank" class="social-icon">
+                            <i class="fa-brands fa-facebook text-xl"></i>
+                        </a>
+                        <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" target="_blank" class="social-icon linkedin">
+                            <i class="fa-brands fa-linkedin text-xl"></i>
+                        </a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="w-9/12 border-t-2 py-12 m-auto text-white" style="font-size: 13px;">
+                <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
+                <div class="w-full md:w-7/12 mt-4">
+                    <p class="py-2">3TIResearch offers comprehensive market research services and self-service tools to 
+                        support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
+                        Your use of our tools and services is subject to our <a href="#" class="underline">Terms of Use</a> and <a href="#" class="underline">Privacy Policy</a>.</p>
+                    <p class="py-4">Your Privacy Choices</p>
+                </div>
+            </div>
+        </div>
+
+        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png" alt="Background" class="footer-image">
+    </div>
+
+<!-- JavaScript for Toggle Menu -->
+<script>
+    
+    AOS.init();
+
+     const testimonials = [
+  {
+    name: "Alice Johnson",
+    comment: "The data solutions provided have revolutionized our decision-making process. Remarkable accuracy and speed!",
+    image: "https://via.placeholder.com/80"
+  },
+  {
+    name: "Bernard Thompson",
+    comment: "Thanks to their data insights, we’ve identified new growth opportunities. Outstanding service!",
+    image: "https://via.placeholder.com/80"
+  },
+  {
+    name: "Chloe Miller",
+    comment: "Their data management platform is intuitive and efficient, saving us valuable time every day.",
+    image: "https://via.placeholder.com/80"
+  },
+  {
+    name: "David Anderson",
+    comment: "The team truly transformed our processes with powerful insights and flawless technical support.",
+    image: "https://via.placeholder.com/80"
+  },
+  {
+    name: "Elisa Brown",
+    comment: "Unmatched expertise in data science. Their analysis reports have boosted our productivity incredibly!",
+    image: "https://via.placeholder.com/80"
+  }
+];
+  
+
+    let currentIndex = 0;
+
+    function displayTestimonial(index) {
+      const testimonialDiv = document.getElementById('testimonial');
+      const { name, comment, image } = testimonials[index];
+
+      testimonialDiv.classList.remove("opacity-0");
+      testimonialDiv.classList.add("opacity-100");
+
+      testimonialDiv.innerHTML = `
+        <img src="${image}" alt="${name}" class="w-20 h-20 rounded-full mx-auto mb-3 transition duration-500 transform hover:scale-110">
+        <p class="text-lg italic text-gray-700 transition-transform duration-500">"${comment}"</p>
+        <h3 class="mt-3 font-semibold">${name}</h3>
+      `;
+
+      // Update pagination dots
+      updatePagination(index);
+    }
+
+    function updatePagination(index) {
+      const paginationDots = document.getElementById('pagination');
+      paginationDots.innerHTML = testimonials.map((_, i) => `
+        <span class="inline-block w-3 h-3 rounded-full ${i === index ? 'bg-green-400' : 'bg-gray-400'}"></span>
+      `).join('');
+    }
+
+    function showNext() {
+      currentIndex = (currentIndex + 1) % testimonials.length;
+      displayTestimonial(currentIndex);
+    }
+
+    function showPrevious() {
+      currentIndex = (currentIndex - 1 + testimonials.length) % testimonials.length;
+      displayTestimonial(currentIndex);
+    }
+
+    document.getElementById('next').addEventListener('click', showNext);
+    document.getElementById('prev').addEventListener('click', showPrevious);
+
+    // Initial display
+    displayTestimonial(currentIndex);
+
+    // Automatic Slide Change
+    setInterval(showNext, 5000); 
+
+    // Initial display
+    displayTestimonial(currentIndex);
+
+    function googleTranslateElementInit() {
+        new google.translate.TranslateElement({
+            pageLanguage: 'en', // Default language of the page
+            includedLanguages: 'en,fr', // Languages to include
+            layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
+            autoDisplay: false
+        }, 'google_translate_element');
+
+        // Ensure the toolbar is hidden after the Google Translate widget loads
+        setTimeout(hideGoogleTranslateBar, 1000);
+    }
+
+
+    function redirectToService1() {
+        window.location.href = "service.html#service1";
+    }
+    
+    function redirectToService2() {
+        window.location.href = "service.html#service2";
+    }
+
+    
+    function redirectToService3() {
+        window.location.href = "service.html#service3";
+    }
+
+    
+    function redirectToService4() {
+        window.location.href = "service.html#service4";
+    }
+
+    
+    function redirectToService5() {
+        window.location.href = "service.html#service5";
+    }
+
+    
+    function redirectToService6() {
+        window.location.href = "service.html#service6";
+    }
+
+    document.addEventListener('DOMContentLoaded', function() {
+        const chatbotButton = document.getElementById('chatbot-button');
+        const chatbotModal = document.getElementById('chatbot-modal');
+        const closeButton = document.querySelector('.close-button');
+  
+        // Remove vibrating effect when modal is opened
+        chatbotButton.classList.add('vibrate');
+  
+        chatbotButton.addEventListener('click', function() {
+          chatbotModal.style.display = 'block';
+          // Remove vibrating effect when modal is opened
+          chatbotButton.classList.remove('vibrate');
+        });
+  
+        closeButton.addEventListener('click', function() {
+          chatbotModal.style.display = 'none';
+          // Add vibrating effect when modal is closed
+          chatbotButton.classList.add('vibrate');
+        });
+  
+        window.addEventListener('click', function(event) {
+          if (event.target === chatbotModal) {
+            chatbotModal.style.display = 'none';
+            // Add vibrating effect when modal is closed
+            chatbotButton.classList.add('vibrate');
+          }
+        });
+  
+        // Function to show notification
+        function showNotification() {
+          if (Notification.permission === "granted") {
+            new Notification("New message from the chatbot!");
+          } else if (Notification.permission !== "denied") {
+            Notification.requestPermission().then(function(permission) {
+              if (permission === "granted") {
+                new Notification("New message from the chatbot!");
+              }
+            });
+          }
+        }
+  
+        // Simulate receiving a new message after 5 seconds
+        setTimeout(showNotification, 5000);
+      });
+
+    document.getElementById('menu-toggle').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.toggle('hidden');
+    });
+
+    document.getElementById('menu-close').addEventListener('click', function() {
+        document.getElementById('mobile-menu').classList.add('hidden');
+    });
+
+    document.querySelectorAll('.faq-item').forEach(item => {
+        item.addEventListener('click', () => {
+            const answer = item.querySelector('.faq-answer');
+            const icon = item.querySelector('i');
+            const isOpen = answer.classList.contains('open');
+            
+            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
+            document.querySelectorAll('.faq-item i').forEach(i => i.classList.remove('fa-chevron-up'));
+            document.querySelectorAll('.faq-item i').forEach(i => i.classList.add('fa-chevron-down'));
+            
+            if (!isOpen) {
+                answer.classList.add('open');
+                icon.classList.remove('fa-chevron-down');
+                icon.classList.add('fa-chevron-up');
+            }
+        });
+    });
+
+    document.getElementById('nav-toggle').addEventListener('click', function() {
+        document.getElementById('nav-menu').classList.toggle('hidden');
+    });
+    document.getElementById('services-toggle').addEventListener('click', function() {
+        document.getElementById('services-menu').classList.toggle('hidden');
+    });
+    document.getElementById('support-toggle').addEventListener('click', function() {
+        document.getElementById('support-menu').classList.toggle('hidden');
+    });
+
+    
+  AOS.init();
+
+</script>
+<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+
+</body>
+</html>

@@ -1,670 +1,1012 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>3TiResearch</title>
-    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="styles.css" />
     <script src="https://cdn.tailwindcss.com"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap">
-    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      rel="stylesheet"
+      href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
+    />
+    <link rel="stylesheet" href="../../styles.css">
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
 
     <style>
+      body {
+        font-family: "Montserrat", sans-serif;
+      }
 
-        body {
-            font-family: 'Montserrat', sans-serif;
-        }
+      .footer-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-        .footer-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 10;
-            background-color: rgba(0, 0, 0, 0.6); 
-            padding-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+      .footer-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
 
-        .footer-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            z-index: 1;
-        } 
-        
-        .footer-container {
-            position: relative;
-            height: 530px; 
-            overflow: hidden;
-        }
+      .footer-container {
+        position: relative;
+        height: 530px;
+        overflow: hidden;
+      }
 
-        /* Custom styles for FAQ section */
-        .faq-item {
-            cursor: pointer;
-        }
-        .faq-answer {
-            display: none;
-        }
-        .faq-answer.open {
-            display: block;
-        }
+      /* Custom styles for FAQ section */
+      .faq-item {
+        cursor: pointer;
+      }
+      .faq-answer {
+        display: none;
+      }
+      .faq-answer.open {
+        display: block;
+      }
 
-        
-        .footer-content {
-            position: absolute;
-            top: 0;
-            left: 0;
-            right: 0;
-            bottom: 0;
-            z-index: 10;
-            background-color: rgba(0, 0, 0, 0.6); 
-            padding-top: 1rem;
-            display: flex;
-            flex-direction: column;
-            justify-content: space-between;
-        }
+      .footer-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
 
-        .footer-image {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            object-fit: cover; 
-            z-index: 1;
-        } 
-        
-        .header-container {
-            position: relative;
-            height: 430px; 
-            overflow: hidden;
-        }
+      .footer-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
 
-        .footer-container {
-            position: relative;
-            height: 620px; 
-            overflow: hidden;
-        }
+      .header-container {
+        position: relative;
+        height: 430px;
+        overflow: hidden;
+      }
 
-     
-        .chatbot-button {
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: #007bff;
-            color: white;
-            border: none;
-            border-radius: 50%;
-            width: 60px;
-            height: 60px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            padding: 0;
-            font-size: 24px;
-            cursor: pointer;
-            z-index: 1000;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-            animation: none; /* Initially no animation */
-          }
-          
-          .chatbot-button:hover {
-            background-color: #0056b3;
-          }
+      .footer-container {
+        position: relative;
+        height: 620px;
+        overflow: hidden;
+      }
+
       
-          .vibrate {
-            animation: vibrate 0.5s infinite;
-          }
-      
-          @keyframes vibrate {
-            0% { transform: translateX(0); }
-            25% { transform: translateX(-5px); }
-            50% { transform: translateX(5px); }
-            75% { transform: translateX(-5px); }
-            100% { transform: translateX(0); }
-          }
-      
-          .chatbot-modal {
-            display: none;
-            position: fixed;
-            bottom: 30px;
-            right: 30px;
-            background-color: rgba(0, 0, 0, 0.5);
-            z-index: 1000;
-            width: 400px;
-            height: 500px;
-            border-radius: 8px;
-          }
-          
-          .chatbot-modal-content {
-            background-color: white;
-            padding: 20px;
-            height: 100%;
-            border-radius: 8px;
-            position: relative;
-          }
-          
-          .close-button {
-            position: absolute;
-            top: 10px;
-            right: 10px;
-            font-size: 24px;
-            cursor: pointer;
-          } 
 
+      .chatbot-button {
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: #007bff;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        width: 60px;
+        height: 60px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 0;
+        font-size: 24px;
+        cursor: pointer;
+        z-index: 1000;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        animation: none; /* Initially no animation */
+      }
 
-        /* Basic styling for the Google Translate widget */
-        #google_translate_element {
-            margin: 20px;
-            text-align: right;
+      .chatbot-button:hover {
+        background-color: #0056b3;
+      }
+
+      .vibrate {
+        animation: vibrate 0.5s infinite;
+      }
+
+      @keyframes vibrate {
+        0% {
+          transform: translateX(0);
         }
-        /* Optional: Customize the font and size */
-        .goog-te-gadget {
-            font-family: Arial, sans-serif;
-            font-size: 14px;
+        25% {
+          transform: translateX(-5px);
         }
-        /* Optional: Hide Google branding (if allowed by TOS) */
-        .goog-te-gadget img {
-            display: none;
+        50% {
+          transform: translateX(5px);
         }
+        75% {
+          transform: translateX(-5px);
+        }
+        100% {
+          transform: translateX(0);
+        }
+      }
+    /* Carousel styling */
+    .carousel-container {
+      overflow: hidden;
+      white-space: nowrap;
+      display: flex;
+      align-items: center;
+    }
+
+    .carousel-track {
+      display: inline-flex;
+      gap: 2rem; /* space between logos */
+    }
+
+    /* Logo styling */
+    .logo {
+      height: 4rem;
+      display: inline-block;
+    }
+
+      .chatbot-modal {
+        display: none;
+        position: fixed;
+        bottom: 30px;
+        right: 30px;
+        background-color: rgba(0, 0, 0, 0.5);
+        z-index: 1000;
+        width: 400px;
+        height: 500px;
+        border-radius: 8px;
+      }
+
+      .chatbot-modal-content {
+        background-color: white;
+        padding: 20px;
+        height: 100%;
+        border-radius: 8px;
+        position: relative;
+      }
+
+      .close-button {
+        position: absolute;
+        top: 10px;
+        right: 10px;
+        font-size: 24px;
+        cursor: pointer;
+      }
+
+      /* Basic styling for the Google Translate widget */
+      #google_translate_element {
+        margin: 20px;
+        text-align: right;
+      }
+      /* Optional: Customize the font and size */
+      .goog-te-gadget {
+        font-family: Arial, sans-serif;
+        font-size: 14px;
+      }
+      /* Optional: Hide Google branding (if allowed by TOS) */
+      .goog-te-gadget img {
+        display: none;
+      }
     </style>
-</head>
-<body>
-
-<!-- Before Header -->
+  </head>
+  <body>
+    <!-- Before Header -->
     <div class="w-full bg-green-800 text-white">
-        <div class="w-9/12 mx-auto px-4">
-            <div class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1">
-                <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
-                    <p><a href="#">(+225) 07 58 80 14 10</a></p>
-                    <p class="md:px-4"><a href="">contact@3tiresearch.com</a></p>
-                </div>
-                <div class="flex items-center space-x-4 mt-4 justify-center md:mt-0">
-                    <a href=""><i class="fa-brands fa-facebook"></i></a>
-                    <a href=""><i class="fa-brands fa-linkedin"></i></a>
-                    <div id="google_translate_element"></div>
-                </div>
-            </div>
+      <div class="w-9/12 mx-auto px-4">
+        <div
+          class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1"
+        >
+          <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
+            <p><a href="#">(+225) 27 22 51 19 33</a></p>
+            <p class="md:px-4">
+              <a href="mailto:contact@3tiresearch.com;"
+                >contact@3tiresearch.com</a
+              >
+            </p>
+          </div>
+          <div class="flex items-center space-x-4 mt-4 justify-center md:mt-0">
+            <a href="https://www.facebook.com/3tiresearch/" type="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci"
+              type="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <div id="google_translate_element"></div>
+          </div>
         </div>
+      </div>
     </div>
 
-<!-- Header -->
+    <!-- Header -->
     <div class="w-full py-2 shadow-md">
-        <div class="w-9/12 mx-auto px-4">
-            <nav class="flex items-center justify-between">
-                <div>
-                    <a href="#">
-                        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1722448052/3TIgreenPlan_de_travail_1_bhib3u.png" class="w-32" alt="LOGO">
-                    </a>
-                </div>
-                <div class="block md:hidden">
-                    <button id="menu-toggle" class="text-gray-700 focus:outline-none">
-                        <i class="fa-solid fa-bars text-2xl"></i>
-                    </button>
-                </div>
-                <div class="hidden md:flex py-3 w-full md:w-auto">
-                    <ul class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 font-semibold text-gray-700">
-                        <li><a href="#">Home</a></li>
-                        <li><a href="#about">About</a></li>
-                        <li><a href="#services">Services</a></li>
-                        <li><a href="contact.html">Contact Us</a></li>
-                        <li><a href="articles.html">Articles</a></li>
-                    </ul>
-                </div>
-            </nav>
-        </div>    
+      <div class="w-9/12 mx-auto px-4">
+        <nav class="flex items-center justify-between">
+          <div>
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dedakscgk/image/upload/v1722448052/3TIgreenPlan_de_travail_1_bhib3u.png"
+                class="w-32"
+                alt="LOGO"
+              />
+            </a>
+          </div>
+          <div class="block md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+          <div class="hidden md:flex py-3 w-full md:w-auto">
+            <ul
+              class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 font-semibold text-gray-700"
+            >
+              <li><a href="#">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="articles.html">Articles</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
     </div>
 
-<!-- Mobile Menu -->
+    <!-- Mobile Menu -->
     <div id="mobile-menu" class="fixed inset-0 bg-white z-50 md:hidden hidden">
-        <div class="flex flex-col items-center pt-10">
-            <button id="menu-close" class="absolute top-4 right-4 text-gray-700 text-2xl">
-                <i class="fa-solid fa-xmark"></i>
-            </button>
-            <ul class="flex flex-col space-y-4 font-semibold text-gray-700">
-                <li><a href="index.html">Home</a></li>
-                <li><a href="#about">About</a></li>
-                <li><a href="#services">Services</a></li>
-                <li><a href="contact.html">Contact Us</a></li>
-                <li><a href="articles.html">Articles</a></li>
-            </ul>
-        </div>
+      <div class="flex flex-col items-center pt-10">
+        <button
+          id="menu-close"
+          class="absolute top-4 right-4 text-gray-700 text-2xl"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="flex flex-col space-y-4 font-semibold text-gray-700">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="articles.html">Articles</a></li>
+        </ul>
+      </div>
     </div>
 
     <div class="header-container">
-        <div class="w-full bg-black opacity-85 text-white pt-32 pb-8 footer-content">
-            <section class="banner w-full flex items-center justify-center text-center text-white">
-                <div class="">
-                    <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
-                        Welcome to <span class="text-green-400">3TIResearch</span> Platform
-                    </h1>
-                    <p class="mt-4 text-lg md:text-xl">
-                        Discover insights, tools, and resources to elevate your market research experience.
-                    </p>
-                    <button class="py-3 bg-green-700 px-8 rounded-md my-4">contact us </button>
-                </div>
-            </section>
-        </div>
+      <div
+        class="w-full bg-black opacity-85 text-white pt-32 pb-8 footer-content"
+      >
+        <section
+          class="banner w-full flex items-center justify-center text-center text-white"
+        >
+          <div class="">
+            <h1 class="text-4xl md:text-5xl font-extrabold leading-tight">
+              Welcome to
+              <span class="text-green-400">3TIResearch</span> Platform
+            </h1>
+            <p class="mt-4 text-lg md:text-xl">
+              Discover insights, tools, and resources to elevate your market
+              research experience.
+            </p>
+            <button class="py-3 bg-green-700 px-8 rounded-md my-4">
+              contact us
+            </button>
+          </div>
+        </section>
+      </div>
 
-        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1714529119/principal_1_fhflby.png" alt="Background" class="footer-image">
+      <img
+        src="https://res.cloudinary.com/dedakscgk/image/upload/v1714529119/principal_1_fhflby.png"
+        alt="Background"
+        class="footer-image"
+      />
     </div>
 
-
-    
     <div id="services">
-        <div class="w-9/12 m-auto py-12">
-            <div class="md:pr-96">
-                <h2 class="md:text-3xl text-lg font-bold">Discover a range of services designed to provide actionable insights and drive growth. </h2>
-            </div>
+      <div class="w-9/12 m-auto py-12">
+        <div class="md:pr-96">
+          <h2 class="md:text-3xl text-lg font-bold">
+            Discover a range of services designed to provide actionable insights
+            and drive growth.
+          </h2>
         </div>
-        <div class="grid grid-cols-1 w-full px-12 md:grid-cols-3 md:px-4 gap-4 md:w-9/12 m-auto"  data-aos="fade-up">
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">Quantitative Analysis</h2>
-                <p>Our quantitative analysis services leverage statistical methods to transform raw data into actionable insights. By meticulously examining numerical data, we uncover patterns, trends, and correlations that inform strategic decision-making.</p>
-                <button onclick="redirectToService1()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
-
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">Types of Quantitative studies</h2>
-                <p>Our skilled data analysts employ advanced programming languages and statistical software to process and analyze complex datasets. By harnessing the power of technology, we deliver accurate and reliable results that drive informed conclusions.</p>
-                <button onclick="redirectToService3()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
-
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">Programming and Analysis</h2>
-                <p>Streamline your research process with our automation solutions. We create efficient workflows and develop interactive data visualizations that facilitate clear communication of findings to stakeholders.</p>
-                <button onclick="redirectToService4()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
-
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">Automation and data Visualization</h2>
-                <p>We optimize your research efficiency through advanced automation tools and captivating data visualizations. By streamlining data processing and analysis, we free up your time for strategic insights. </p>
-                <button onclick="redirectToService6()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
-
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">Qualitative services</h2>
-                <p>Complement your quantitative research with our qualitative services. We delve into the depth of consumer experiences, opinions, and motivations through in-depth interviews, focus groups, and other qualitative techniques.</p>
-                <button onclick="redirectToService5()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
-
-            <div class="px-4">
-                <h2 class="md:text-xl text-2lg py-2 font-bold">independent quality control</h2>
-                <p>Maintain the highest standards of data integrity with our rigorous independent quality control processes. Our dedicated team ensures data accuracy, reliability, and adherence to industry best practices, providing you with confidence in your research outcomes.</p>
-                <button onclick="redirectToService2()" class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-            </div>
+      </div>
+      <div
+        class="grid grid-cols-1 w-full px-12 md:grid-cols-3 md:px-4 gap-4 md:w-9/12 m-auto"
+        data-aos="fade-up"
+      >
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            Quantitative Analysis
+          </h2>
+          <p>
+            Our quantitative analysis services leverage statistical methods to
+            transform raw data into actionable insights. By meticulously
+            examining numerical data, we uncover patterns, trends, and
+            correlations that inform strategic decision-making.
+          </p>
+          <button
+            onclick="redirectToService1()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
         </div>
+
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            Types of Quantitative studies
+          </h2>
+          <p>
+            Our skilled data analysts employ advanced programming languages and
+            statistical software to process and analyze complex datasets. By
+            harnessing the power of technology, we deliver accurate and reliable
+            results that drive informed conclusions.
+          </p>
+          <button
+            onclick="redirectToService3()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
+        </div>
+
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            Programming and Analysis
+          </h2>
+          <p>
+            Streamline your research process with our automation solutions. We
+            create efficient workflows and develop interactive data
+            visualizations that facilitate clear communication of findings to
+            stakeholders.
+          </p>
+          <button
+            onclick="redirectToService4()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
+        </div>
+
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            Automation and data Visualization
+          </h2>
+          <p>
+            We optimize your research efficiency through advanced automation
+            tools and captivating data visualizations. By streamlining data
+            processing and analysis, we free up your time for strategic
+            insights.
+          </p>
+          <button
+            onclick="redirectToService6()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
+        </div>
+
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            Qualitative services
+          </h2>
+          <p>
+            Complement your quantitative research with our qualitative services.
+            We delve into the depth of consumer experiences, opinions, and
+            motivations through in-depth interviews, focus groups, and other
+            qualitative techniques.
+          </p>
+          <button
+            onclick="redirectToService5()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
+        </div>
+
+        <div class="px-4">
+          <h2 class="md:text-xl text-2lg py-2 font-bold">
+            independent quality control
+          </h2>
+          <p>
+            Maintain the highest standards of data integrity with our rigorous
+            independent quality control processes. Our dedicated team ensures
+            data accuracy, reliability, and adherence to industry best
+            practices, providing you with confidence in your research outcomes.
+          </p>
+          <button
+            onclick="redirectToService2()"
+            class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold"
+          >
+            Learn more
+          </button>
+        </div>
+      </div>
     </div>
 
-    
-    <div class="border-4 border-black my-16 flex justify-between py-4 md:py-12 px-2 md:px-12 w-9/12 m-auto">
-        <div>
-            <h2 class="md:text-xl text-2lg font-bold">Not sure what you need?</h2>
-        </div>
-        <div>
-            <button class='py-2 md:px-6 bg-green-700 text-white rounded-full md:font-bold'>Help me decide </button>
-        </div>
+    <div
+      class="border-4 border-black my-16 flex justify-between py-4 md:py-12 px-2 md:px-12 w-9/12 m-auto"
+    >
+      <div>
+        <h2 class="md:text-xl text-2lg font-bold">Not sure what you need?</h2>
+      </div>
+      <div>
+        <a href="chooseUs.html"
+          ><button
+            class="py-2 md:px-6 bg-green-700 text-white rounded-full md:font-bold"
+          >
+            Help me decide
+          </button></a
+        >
+      </div>
     </div>
 
-   <div class="w-full bg-gray-50" id="about"> 
-        <div class="py-12 w-full m-auto">
-            <div class="w-9/12 m-auto py-6 text-center">
-                <h2 class="font-semibold text-lg">Passion and Purpose: Our Guiding Principles</h2>
-                <p>Passion fuels our drive. Purpose guides our mission.</p>
-            </div>
-            <div class="grid md:grid-cols-3 w-9/12 m-auto gap-8">
-                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
-                    <h2 class="text-xl py-2 font-bold">Teamwork: Our cornerstone</h2>
-                    <p>Collaboration is our driving force. We believe in the power of diverse minds working together. Our team is united by shared goals and a commitment to excellence. Together, we create exceptional outcomes.</p>
-                    <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-                </div>
-                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
-                    <h2 class="text-xl py-2 font-bold">Professionals</h2>
-                    <p>Our team comprises seasoned industry experts. With deep knowledge and proven skills, we deliver exceptional research solutions. Our professionals are passionate about uncovering insights that drive business growth. Trust in our expertise for reliable results.</p>
-                    <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-                </div>
-                <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
-                    <h2 class="text-xl py-2 font-bold">Leadership</h2>
-                    <p>Our leaders inspire and empower. With a clear vision, they guide our team towards success. Their expertise and strategic thinking drive innovation. Strong leadership is the foundation of our company.</p>
-                    <button class="rounded-full px-6 py-2 my-3 border-2 text-green-700 border-green-700 font-bold">Learn more </button>
-                </div>
-            </div>
+    <div class="w-full bg-gray-50" id="about">
+      <div class="py-12 w-full m-auto">
+        <div class="w-9/12 m-auto py-6 text-center">
+          <h2 class="font-semibold text-lg">
+            Passion and Purpose: Our Guiding Principles
+          </h2>
+          <p>Passion fuels our drive. Purpose guides our mission.</p>
         </div>
+        <div class="grid md:grid-cols-3 w-9/12 m-auto gap-8">
+          <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
+            <h2 class="text-xl py-2 font-bold">Teamwork: Our cornerstone</h2>
+            <p>
+              Collaboration is our driving force. We believe in the power of
+              diverse minds working together. Our team is united by shared goals
+              and a commitment to excellence. Together, we create exceptional
+              outcomes.
+            </p>
+          </div>
+          <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
+            <h2 class="text-xl py-2 font-bold">Professionals</h2>
+            <p>
+              Our team comprises seasoned industry experts. With deep knowledge
+              and proven skills, we deliver exceptional research solutions. Our
+              professionals are passionate about uncovering insights that drive
+              business growth. Trust in our expertise for reliable results.
+            </p>
+          </div>
+          <div class="border border-gray-600 px-6 py-8" data-aos="fade-up">
+            <h2 class="text-xl py-2 font-bold">Leadership</h2>
+            <p>
+              Our leaders inspire and empower. With a clear vision, they guide
+              our team towards success. Their expertise and strategic thinking
+              drive innovation. Strong leadership is the foundation of our
+              company.
+            </p>
+          </div>
+        </div>
+      </div>
     </div>
 
     <div class="md:w-9/12 w-full mx-auto my-12 p-6" id="faq">
-        <h1 class="text-lg md:text-xl font-semibold mb-6 pb-4 border-black border-b-4 ">Frequently Asked Questions</h1>
-        
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">What types of market research services do you offer?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>We offer a comprehensive range of market research services, including quantitative and qualitative research, data analytics, market segmentation, customer satisfaction surveys, and competitive analysis.</p>
-            </div>
-        </div>
+      <h1
+        class="text-lg md:text-xl font-semibold mb-6 pb-4 border-black border-b-4"
+      >
+        Frequently Asked Questions
+      </h1>
 
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">How do I choose the right research methodology for my project?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>Choosing the right methodology depends on your specific research objectives, target audience, and budget. Our experts will work closely with you to determine the best approach, whether it's surveys, focus groups, interviews, or data analysis.
-                </p>
-            </div>
+      <div class="faq-item border-b py-4">
+        <div class="flex justify-between items-center">
+          <h2 class="md:text-lg text-2lg">
+            What types of market research services do you offer?
+          </h2>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
+        <div class="faq-answer text-sm mt-2">
+          <p>
+            We offer a comprehensive range of market research services,
+            including quantitative and qualitative research, data analytics,
+            market segmentation, customer satisfaction surveys, and competitive
+            analysis.
+          </p>
+        </div>
+      </div>
 
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">How do you ensure data privacy and security?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>Data privacy and security are paramount. We adhere to strict confidentiality protocols and employ advanced security measures to protect sensitive information. Our data handling practices comply with relevant data protection regulations.</p>
-            </div>
+      <div class="faq-item border-b py-4">
+        <div class="flex justify-between items-center">
+          <h2 class="md:text-lg text-2lg faq">
+            How do I choose the right research methodology for my project?
+          </h2>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
+        <div class="faq-answer text-sm mt-2">
+          <p>
+            Choosing the right methodology depends on your specific research
+            objectives, target audience, and budget. Our experts will work
+            closely with you to determine the best approach, whether it's
+            surveys, focus groups, interviews, or data analysis.
+          </p>
+        </div>
+      </div>
 
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">Do you offer flexible pricing options?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>Yes, we offer flexible pricing options to accommodate different budgets and project requirements. We can tailor our services to meet your specific needs while providing value.</p>
-            </div>
+      <div class="faq-item border-b py-4">
+        <div class="flex justify-between items-center">
+          <h2 class="md:text-lg text-2lg">
+            Do you offer flexible pricing options?
+          </h2>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
+        <div class="faq-answer text-sm mt-2">
+          <p>
+            Yes, we offer flexible pricing options to accommodate different
+            budgets and project requirements. We can tailor our services to meet
+            your specific needs while providing value.
+          </p>
+        </div>
+      </div>
 
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">Can you provide examples of successful projects?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>Absolutely. We have a strong portfolio of successful projects. We can share case studies and client testimonials that demonstrate our ability to deliver actionable insights.</p>
-            </div>
+      <div class="faq-item border-b py-4">
+        <div class="flex justify-between items-center">
+          <h2 class="md:text-lg text-2lg">
+            What is your process for delivering final reports and insights?
+          </h2>
+          <i class="fa-solid fa-chevron-down"></i>
         </div>
-
-        <div class="faq-item border-b py-4">
-            <div class="flex justify-between items-center">
-                <h2 class="md:text-lg text-2lg">What is your process for delivering final reports and insights?</h2>
-                <i class="fa-solid fa-chevron-down"></i>
-            </div>
-            <div class="faq-answer text-sm mt-2">
-                <p>We deliver comprehensive final reports that clearly communicate key findings, recommendations, and actionable insights. We also provide data visualizations and presentations to enhance understanding. Our goal is to provide you with the tools to make informed decisions.</p>
-            </div>
+        <div class="faq-answer text-sm mt-2">
+          <p>
+            We deliver comprehensive final reports that clearly communicate key
+            findings, recommendations, and actionable insights. We also provide
+            data visualizations and presentations to enhance understanding. Our
+            goal is to provide you with the tools to make informed decisions.
+          </p>
         </div>
+      </div>
     </div>
 
     <!-- Your page content here -->
 
-    <!-- Chatbot Button -->
+    <!-- Chatbot Button
     <button id="chatbot-button" class="chatbot-button bg-green-700 hover:bg-green-900">
-        <p><i class="fa-solid fa-robot"></i></p> <!-- Add your chat icon here -->
+        <p><i class="fa-solid fa-robot"></i></p> 
     </button>
 
-    <!-- Chatbot Modal -->
     <div id="chatbot-modal" class="chatbot-modal">
         <div class="chatbot-modal-content">
         <span class="close-button">&times;</span>
         <iframe src="https://copilotstudio.microsoft.com/environments/Default-12f2971e-cac5-47a4-8d68-f1b22042f83e/bots/cr588_3TiAssistant/webchat?__version__=2"
             frameborder="0" style="width: 98%; height: 100%;"></iframe>
         </div>
-    </div>
+    </div> -->
+
+      <!-- Carousel Container -->
+      <div class="py-12 bg-gray-50">
+        <h1 class="font-bold text-2xl text-center">Our Clients With Good <span > Service Experience</span></h1>
+        <div class="slider h-fit">
+          <div class="slide-track flex items-center justify-between ">
+            <div class="slide">
+              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png" height="300" width="450" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png" height="50" width="100" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png" height="50" width="100" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s" height="100" width="250" alt="" />
+            </div>
+            
+            
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png" height="100" width="250" alt="" />
+            </div>
+  
+  
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png" height="100" width="250" alt="" />
+            </div>
+  
+  
+            <div class="slide">
+              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png" height="300" width="450" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png" height="100" width="100" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png" height="100" width="100" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" height="100" width="250" alt="" />
+            </div>
+            <div class="slide">
+              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png" height="100" width="250" alt="" />
+            </div>
+            
+          </div>
+        </div>
+      </div>
 
 
-    <div class="w-9/12 m-auto py-4 text-xl font-semibold" id="contact"><h2>Questions?</h2></div>
-    <div class=" grid md:grid-cols-2 gap-4 pb-12 w-9/12 m-auto" data-aos="fade-up">
-        <div class="bg-gray-50 px-12 py-12">
-            <h2 class="text-lg font-semibold md:text-lg">Ask an Expert</h2>
-            <p>Get the right guidance with an expert by your side.</p>
-            <button class="py-3 bg-green-700 rounded-full px-8 text-white my-4">Get some help</button>
+<div class="bg-green-50">
+    <div class="m-auto pt-12 pb-5  text-center text-xl font-semibold" id="con  tact">
+        <h2>Questions?</h2>
+      </div>
+      <div
+        class="pb-12 w-fit text-center m-auto bg-transparent"
+        data-aos="fade-up"
+      >
+        <div class="pt-5">
+          <h2 class="text-lg font-semibold  md:text-lg">Ask an Expert</h2>
+          <p class="py-1">Get the right guidance with an <br> expert by your side.</p>
+          <a href="contact.html"
+            ><button class="py-3 bg-green-700 rounded-full px-8 text-white my-4">
+              Get some help
+            </button>
+          </a>
         </div>
-        <div class="bg-gray-50 px-12 py-12">
-            <h2 class="text-lg md:text-lg font-semibold">Call an agent at (+225) 07 58 80 14 10</h2>
-            <p>Mon-Fri: 8 a.m.-7 p.m. PT</p>
-            <p>Weekends: 8 a.m.-3 p.m. PT</p>
-        </div>
-    </div>
+      </div>
+</div>
 
     <div class="footer-container">
-        <div class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content">
-            <div class="md:w-6/12 m-auto py-8 px-12">
-                <h5 class="text-lg text-center py-4">Get helpful tips and info from our newsletter!</h5>
-                <form action="" class="text-2lg flex">
-                    <div class="flex border-b-2 w-full">
-                        <input type="text" class="bg-transparent focus:outline-none border-none w-full md:w-full py-1" placeholder="Enter your Email">
-                        <button type="submit" class="w-full justify-end flex">Sign up</button>
-                    </div>
-                </form>
+      <div
+        class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content"
+      >
+        <div class="md:w-6/12 m-auto py-8 px-12">
+          <h5 class="text-lg text-center py-4">
+            Get helpful tips and info from our newsletter!
+          </h5>
+          <form action="" class="text-2lg flex">
+            <div class="flex border-b-2 w-full">
+              <input
+                type="text"
+                class="bg-transparent focus:outline-none border-none w-full md:w-full py-1"
+                placeholder="Enter your Email"
+              />
+              <a href="mailto:contact@3tiresearch.com;" class="w-full">
+                <button type="submit" class="w-full justify-end flex">
+                    Sign up
+                  </button>
+              </a>
             </div>
-
-            <div class="md:w-9/12 w-full m-auto flex flex-col md:flex-row px-12 py-8">
-                <!-- Navigation Section -->
-                <div class="w-full md:w-3/12 mb-4 md:mb-0">
-                    <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
-                    <button id="nav-toggle" class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                        <span>Navigation</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div id="nav-menu" class="hidden mt-2 md:block">
-                        <ul class="text-lg md:text-sm">
-                            <li class="hover:underline"><a href="#">Home</a></li>
-                            <li class="hover:underline"><a href="about.html">About</a></li>
-                            <li class="hover:underline"><a href="index.hmtl">Services</a></li>
-                            <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
-                            <li class="hover:underline"><a href="articles.html">Articles</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Services Section -->
-                <div class="w-full md:w-4/12 mb-4 md:mb-0">
-                    <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
-                    <button id="services-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                        <span>Services</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div id="services-menu" class="hidden mt-2 md:block">
-                        <ul class="text-lg md:text-sm">
-                            <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                            <li class="hover:underline cursor-pointer">Quality Control</li>
-                            <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                            <li class="hover:underline cursor-pointer">Quality Services</li>
-                            <li class="hover:underline cursor-pointer">Automation & Visualization</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Support Section -->
-                <div class="w-full md:w-4/12 mb-4 md:mb-0">
-                    <h5 class="text-lg capitalize py-1 hidden md:block">Support</h5>
-                    <button id="support-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                        <span>Support</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div id="support-menu" class="hidden mt-2 md:block">
-                        <ul class="text-lg md:text-sm">
-                            <li class="hover:underline cursor-pointer">Quantitative Services</li>
-                            <li class="hover:underline cursor-pointer">Quality Control</li>
-                            <li class="hover:underline cursor-pointer">Programming & Analysis</li>
-                            <li class="hover:underline cursor-pointer">Quality Services</li>
-                            <li class="hover:underline cursor-pointer">Automation & Visualization</li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Logo and Social Icons -->
-                <div class="w-full md:w-3/12">
-                    <h5 class="text-lg capitalize py-1">
-                        <a href="#">
-                            <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png" class="w-40" alt="LOGO">
-                        </a>
-                    </h5>
-                    <div class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0">
-                        <a href="https://www.facebook.com/3tiresearch/" target="_blank" class="social-icon">
-                            <i class="fa-brands fa-facebook text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" target="_blank" class="social-icon linkedin">
-                            <i class="fa-brands fa-linkedin text-xl"></i>
-                        </a>
-                    </div>
-                </div>
-            </div>
-
-            <div class="w-9/12 border-t-2 py-12 m-auto text-white" style="font-size: 13px;">
-                <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
-                <div class="w-full md:w-7/12 mt-4">
-                    <p class="py-2">3TIResearch offers comprehensive market research services and self-service tools to 
-                        support your business decisions <a href="#" class="underline">Terms of Use</a> and <a href="#" class="underline">Privacy Policy</a>.</p>
-                    <p class="py-4">Your Privacy Choices</p>
-                </div>
-            </div>
+          </form>
         </div>
 
-        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png" alt="Background" class="footer-image">
+        <div
+          class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8"
+        >
+          <!-- Navigation Section -->
+          <div class="w-full md:w-3/12 mb-4 md:mb-0">
+            <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
+            <button
+              id="nav-toggle"
+              class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+            >
+              <span>Navigation</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="nav-menu" class="hidden mt-2 md:block">
+              <ul class="text-lg md:text-sm">
+                <li class="hover:underline"><a href="#">Home</a></li>
+                <li class="hover:underline"><a href="about.html">About</a></li>
+                <li class="hover:underline">
+                  <a href="service.html">Services</a>
+                </li>
+                <li class="hover:underline">
+                  <a href="contact.html">Contact Us</a>
+                </li>
+                <li class="hover:underline">
+                  <a href="articles.html">Articles</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Services Section -->
+          <div class="w-full md:w-4/12 mb-4 md:mb-0">
+            <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
+            <button
+              id="services-toggle"
+              class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+            >
+              <span>Services</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="services-menu" class="hidden mt-2 md:block">
+              <ul class="text-lg md:text-sm">
+                <button onclick="redirectToService1()">
+                  <li class="hover:underline cursor-pointer">
+                    Quantitative Services
+                  </li>
+                </button>
+                <button onclick="redirectToService2()">
+                  <li class="hover:underline cursor-pointer">
+                    Independent Quality Control
+                  </li>
+                </button>
+                <button onclick="redirectToService3()">
+                  <li class="hover:underline cursor-pointer">
+                    Programming & Analysis
+                  </li>
+                </button>
+                <button onclick="redirectToService5()">
+                  <li class="hover:underline cursor-pointer">
+                    Qualitative Services
+                  </li>
+                </button>
+                <button onclick="redirectToService6()">
+                  <li class="hover:underline cursor-pointer">
+                    Automation & Visualization data
+                  </li>
+                </button>
+                <button onclick="redirectToService3()">
+                  <li class="hover:underline cursor-pointer">
+                    Type of Quantitative Study
+                  </li>
+                </button>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Support Section -->
+
+          <!-- Logo and Social Icons -->
+          <div class="w-full md:w-3/12">
+            <h5 class="text-lg capitalize py-1">
+              <a href="#">
+                <img
+                  src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png"
+                  class="w-40"
+                  alt="LOGO"
+                />
+              </a>
+            </h5>
+            <div
+              class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0"
+            >
+              <a
+                href="https://www.facebook.com/3tiresearch/"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fa-brands fa-facebook text-xl"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci"
+                target="_blank"
+                class="social-icon linkedin"
+              >
+                <i class="fa-brands fa-linkedin text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="w-9/12 border-t-2 py-12 m-auto text-white"
+          style="font-size: 13px"
+        >
+          <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
+          <div class="w-full md:w-7/12 mt-4">
+            <p class="py-2">
+                3TIResearch offers comprehensive market research services and self-service tools to support your business decisions. We are not a consultancy firm and do not provide direct consulting services. Your use of our tools and services is subject to our <a href="#" class="underline">Terms of Use</a> and <a href="#" class="underline">Privacy Policy</a>.
+               
+              .
+            </p>
+            <p class="py-4">Your Privacy Choices</p>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png"
+        alt="Background"
+        class="footer-image"
+      />
     </div>
 
-<!-- JavaScript for Toggle Menu -->
-<script>
-    function googleTranslateElementInit() {
-        new google.translate.TranslateElement({
-            pageLanguage: 'en', // Default language of the page
-            includedLanguages: 'en,fr', // Languages to include
+    <!-- JavaScript for Toggle Menu -->
+    <script>
+      AOS.init();
+
+
+      function googleTranslateElementInit() {
+        new google.translate.TranslateElement(
+          {
+            pageLanguage: "en", // Default language of the page
+            includedLanguages: "en,fr", // Languages to include
             layout: google.translate.TranslateElement.InlineLayout.SIMPLE,
-            autoDisplay: false
-        }, 'google_translate_element');
+            autoDisplay: false,
+          },
+          "google_translate_element"
+        );
 
         // Ensure the toolbar is hidden after the Google Translate widget loads
         setTimeout(hideGoogleTranslateBar, 1000);
-    }
+      }
 
-
-    function redirectToService1() {
+      function redirectToService1() {
         window.location.href = "service.html#service1";
-    }
-    
-    function redirectToService2() {
+      }
+
+      function redirectToService2() {
         window.location.href = "service.html#service2";
-    }
+      }
 
-    
-    function redirectToService3() {
+      function redirectToService3() {
         window.location.href = "service.html#service3";
-    }
+      }
 
-    
-    function redirectToService4() {
+      function redirectToService4() {
         window.location.href = "service.html#service4";
-    }
+      }
 
-    
-    function redirectToService5() {
+      function redirectToService5() {
         window.location.href = "service.html#service5";
-    }
+      }
 
-    
-    function redirectToService6() {
+      function redirectToService6() {
         window.location.href = "service.html#service6";
-    }
+      }
 
-    document.addEventListener('DOMContentLoaded', function() {
-        const chatbotButton = document.getElementById('chatbot-button');
-        const chatbotModal = document.getElementById('chatbot-modal');
-        const closeButton = document.querySelector('.close-button');
-  
+      document.addEventListener("DOMContentLoaded", function () {
+        const chatbotButton = document.getElementById("chatbot-button");
+        const chatbotModal = document.getElementById("chatbot-modal");
+        const closeButton = document.querySelector(".close-button");
+
         // Remove vibrating effect when modal is opened
-        chatbotButton.classList.add('vibrate');
-  
-        chatbotButton.addEventListener('click', function() {
-          chatbotModal.style.display = 'block';
+        chatbotButton.classList.add("vibrate");
+
+        chatbotButton.addEventListener("click", function () {
+          chatbotModal.style.display = "block";
           // Remove vibrating effect when modal is opened
-          chatbotButton.classList.remove('vibrate');
+          chatbotButton.classList.remove("vibrate");
         });
-  
-        closeButton.addEventListener('click', function() {
-          chatbotModal.style.display = 'none';
+
+        closeButton.addEventListener("click", function () {
+          chatbotModal.style.display = "none";
           // Add vibrating effect when modal is closed
-          chatbotButton.classList.add('vibrate');
+          chatbotButton.classList.add("vibrate");
         });
-  
-        window.addEventListener('click', function(event) {
+
+        window.addEventListener("click", function (event) {
           if (event.target === chatbotModal) {
-            chatbotModal.style.display = 'none';
+            chatbotModal.style.display = "none";
             // Add vibrating effect when modal is closed
-            chatbotButton.classList.add('vibrate');
+            chatbotButton.classList.add("vibrate");
           }
         });
-  
+
         // Function to show notification
         function showNotification() {
           if (Notification.permission === "granted") {
             new Notification("New message from the chatbot!");
           } else if (Notification.permission !== "denied") {
-            Notification.requestPermission().then(function(permission) {
+            Notification.requestPermission().then(function (permission) {
               if (permission === "granted") {
                 new Notification("New message from the chatbot!");
               }
             });
           }
         }
-  
+
         // Simulate receiving a new message after 5 seconds
         setTimeout(showNotification, 5000);
       });
 
-    document.getElementById('menu-toggle').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.toggle('hidden');
-    });
-
-    document.getElementById('menu-close').addEventListener('click', function() {
-        document.getElementById('mobile-menu').classList.add('hidden');
-    });
-
-    document.querySelectorAll('.faq-item').forEach(item => {
-        item.addEventListener('click', () => {
-            const answer = item.querySelector('.faq-answer');
-            const icon = item.querySelector('i');
-            const isOpen = answer.classList.contains('open');
-            
-            document.querySelectorAll('.faq-answer').forEach(a => a.classList.remove('open'));
-            document.querySelectorAll('.faq-item i').forEach(i => i.classList.remove('fa-chevron-up'));
-            document.querySelectorAll('.faq-item i').forEach(i => i.classList.add('fa-chevron-down'));
-            
-            if (!isOpen) {
-                answer.classList.add('open');
-                icon.classList.remove('fa-chevron-down');
-                icon.classList.add('fa-chevron-up');
-            }
+      document
+        .getElementById("menu-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.toggle("hidden");
         });
-    });
 
-    document.getElementById('nav-toggle').addEventListener('click', function() {
-        document.getElementById('nav-menu').classList.toggle('hidden');
-    });
-    document.getElementById('services-toggle').addEventListener('click', function() {
-        document.getElementById('services-menu').classList.toggle('hidden');
-    });
-    document.getElementById('support-toggle').addEventListener('click', function() {
-        document.getElementById('support-menu').classList.toggle('hidden');
-    });
+      document
+        .getElementById("menu-close")
+        .addEventListener("click", function () {
+          document.getElementById("mobile-menu").classList.add("hidden");
+        });
 
-    
-  AOS.init();
+      document.querySelectorAll(".faq-item").forEach((item) => {
+        item.addEventListener("click", () => {
+          
+          const answer = item.querySelector(".faq-answer");
+          const icon = item.querySelector("i");
+          const isOpen = answer.classList.contains("open");
 
-</script>
-<script type="text/javascript" src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"></script>
+          if (!isOpen) {
+            answer.classList.add("open");
+            icon.classList.remove("fa-chevron-down");
+            icon.classList.add("fa-chevron-up");
+          } else {
+            document
+              .querySelectorAll(".faq-answer")
+              .forEach((a) => a.classList.remove("open"));
+            document
+              .querySelectorAll(".faq-item i")
+              .forEach((i) => i.classList.remove("fa-chevron-up"));
+            document
+              .querySelectorAll(".faq-item i")
+              .forEach((i) => i.classList.add("fa-chevron-down"));
+          }
+        });
+      });
 
-</body>
+      document
+        .getElementById("nav-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("nav-menu").classList.toggle("hidden");
+        });
+      document
+        .getElementById("services-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("services-menu").classList.toggle("hidden");
+        });
+      document
+        .getElementById("support-toggle")
+        .addEventListener("click", function () {
+          document.getElementById("support-menu").classList.toggle("hidden");
+        });
+
+
+
+
+
+    </script>
+    <script
+      type="text/javascript"
+      src="//translate.google.com/translate_a/element.js?cb=googleTranslateElementInit"
+    ></script>
+  </body>
 </html>
