@@ -152,18 +152,46 @@
           transform: translateX(0);
         }
       }
-    /* Carousel styling */
-    .carousel-container {
-      overflow: hidden;
-      white-space: nowrap;
-      display: flex;
-      align-items: center;
-    }
+      .slider {
+	background: white;
+	margin: auto;
+	overflow:hidden;
+	position: relative;
+	width: 100%;
+    margin: 100px 0 ;
+	
+	 &::before,
+	&::after {
+		@include white-gradient;
+		content: "";
+		height: 100px;
+		position: absolute;
+		width: 200px;
+		z-index: 2;
+	} 
+	
+	&::after {
+		right: 0;
+		top: 0;
+		transform: rotateZ(180deg);
+	}
 
-    .carousel-track {
-      display: inline-flex;
-      gap: 2rem; /* space between logos */
-    }
+	&::before {
+		left: 0;
+		top: 0;
+	}
+	
+	.slide-track {
+		animation: scroll 40s linear infinite;
+		display: flex;
+		width: calc(250px * 20);
+	}
+	
+	.slide {
+		height: auto;
+		width: 250px;
+        padding: 0 52px;
+	}}
 
     /* Logo styling */
     .logo {
@@ -223,7 +251,6 @@
           class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1"
         >
           <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
-            <p><a href="#">(+225) 27 22 51 19 33</a></p>
             <p class="md:px-4">
               <a href="mailto:contact@3tiresearch.com;"
                 >contact@3tiresearch.com</a
