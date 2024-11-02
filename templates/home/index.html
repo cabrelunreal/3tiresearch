@@ -14,7 +14,6 @@
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;700&display=swap"
     />
-    <link rel="stylesheet" href="../../styles.css">
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <link
@@ -104,8 +103,6 @@
         overflow: hidden;
       }
 
-      
-
       .chatbot-button {
         position: fixed;
         bottom: 30px;
@@ -152,52 +149,63 @@
           transform: translateX(0);
         }
       }
-      .slider {
-	background: white;
-	margin: auto;
-	overflow:hidden;
-	position: relative;
-	width: 100%;
-    margin: 100px 0 ;
-	
-	 &::before,
-	&::after {
-		@include white-gradient;
-		content: "";
-		height: 100px;
-		position: absolute;
-		width: 200px;
-		z-index: 2;
-	} 
-	
-	&::after {
-		right: 0;
-		top: 0;
-		transform: rotateZ(180deg);
-	}
 
-	&::before {
-		left: 0;
-		top: 0;
-	}
-	
-	.slide-track {
-		animation: scroll 40s linear infinite;
-		display: flex;
-		width: calc(250px * 20);
-	}
-	
-	.slide {
-		height: auto;
-		width: 250px;
-        padding: 0 52px;
-	}}
 
-    /* Logo styling */
-    .logo {
-      height: 4rem;
-      display: inline-block;
+      @keyframes scroll {
+	  0% { transform: translateX(0); }
+	  100% { transform: translateX(calc(-250px * 7))}
     }
+
+      .slider {
+        background: white;
+        margin: auto;
+        overflow: hidden;
+        position: relative;
+        width: 100%;
+        margin: 100px 0;
+
+        &::before,
+        &::after {
+          content: "";
+          height: 100px;
+          position: absolute;
+          width: 200px;
+          z-index: 2;
+        }
+
+        &::after {
+          right: 0;
+          top: 0;
+          transform: rotateZ(180deg);
+        }
+
+        &::before {
+          left: 0;
+          top: 0;
+        }
+
+        .slide-track {
+          animation: scroll 40s linear infinite;
+          display: flex;
+          width: calc(250px * 20);
+        }
+
+        .slide {
+          height: auto;
+          width: 250px;
+          padding: 0 52px;
+        }
+      }
+
+
+
+
+
+      /* Logo styling */
+      .logo {
+        height: 4rem;
+        display: inline-block;
+      }
 
       .chatbot-modal {
         display: none;
@@ -624,91 +632,201 @@
         </div>
     </div> -->
 
-      <!-- Carousel Container -->
-      <div class="py-12 bg-gray-50">
-        <h1 class="font-bold text-2xl text-center">Our Clients With Good <span > Service Experience</span></h1>
-        <div class="slider h-fit">
-          <div class="slide-track flex items-center justify-between ">
-            <div class="slide">
-              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png" height="300" width="450" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png" height="50" width="100" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png" height="50" width="100" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s" height="100" width="250" alt="" />
-            </div>
-            
-            
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png" height="100" width="250" alt="" />
-            </div>
-  
-  
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png" height="100" width="250" alt="" />
-            </div>
-  
-  
-            <div class="slide">
-              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png" height="300" width="450" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png" height="100" width="100" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png" height="100" width="100" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png" height="100" width="250" alt="" />
-            </div>
-            <div class="slide">
-              <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png" height="100" width="250" alt="" />
-            </div>
-            
+    <!-- Carousel Container -->
+    <div class="py-12 bg-gray-50">
+      <h1 class="font-bold text-2xl text-center">
+        Our Clients With Good <span> Service Experience</span>
+      </h1>
+      <div class="slider h-fit">
+        <div class="slide-track flex items-center justify-between">
+          <div class="slide">
+            <img
+              src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png"
+              height="300"
+              width="450"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png"
+              height="50"
+              width="100"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png"
+              height="50"
+              width="100"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+
+          <div class="slide">
+            <img
+              src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730298623/47351283-8920-4513-9641-9141592663e7.png"
+              height="300"
+              width="450"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/d/dd/MTN_logo.png"
+              height="100"
+              width="100"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/c/c8/Orange_logo.svg/284px-Orange_logo.svg.png"
+              height="100"
+              width="100"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://res.cloudinary.com/ddqkpyo5u/image/upload/v1730303299/cca7a2c7-a1af-411f-ab7b-5faa4bf16fd4.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://logos-world.net/wp-content/uploads/2020/04/LOreal-Logo.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/1/17/Logo_Kantar_noir.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRx2TLvtVWYcTc7aLK4rei9RX8oM7gTUaxRGg&s"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/f/f7/Diageo_Logo.svg/2560px-Diageo_Logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/f/f9/P%26G_logo.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/fr/thumb/e/e8/Shell_logo.svg/1200px-Shell_logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
+          </div>
+          <div class="slide">
+            <img
+              src="https://upload.wikimedia.org/wikipedia/commons/thumb/2/24/Samsung_Logo.svg/1000px-Samsung_Logo.svg.png"
+              height="100"
+              width="250"
+              alt=""
+            />
           </div>
         </div>
       </div>
+    </div>
 
-
-<div class="bg-green-50">
-    <div class="m-auto pt-12 pb-5  text-center text-xl font-semibold" id="con  tact">
+    <div class="bg-green-50">
+      <div
+        class="m-auto pt-12 pb-5 text-center text-xl font-semibold"
+        id="con  tact"
+      >
         <h2>Questions?</h2>
       </div>
       <div
@@ -716,16 +834,21 @@
         data-aos="fade-up"
       >
         <div class="pt-5">
-          <h2 class="text-lg font-semibold  md:text-lg">Ask an Expert</h2>
-          <p class="py-1">Get the right guidance with an <br> expert by your side.</p>
+          <h2 class="text-lg font-semibold md:text-lg">Ask an Expert</h2>
+          <p class="py-1">
+            Get the right guidance with an <br />
+            expert by your side.
+          </p>
           <a href="contact.html"
-            ><button class="py-3 bg-green-700 rounded-full px-8 text-white my-4">
+            ><button
+              class="py-3 bg-green-700 rounded-full px-8 text-white my-4"
+            >
               Get some help
             </button>
           </a>
         </div>
       </div>
-</div>
+    </div>
 
     <div class="footer-container">
       <div
@@ -744,8 +867,8 @@
               />
               <a href="mailto:contact@3tiresearch.com;" class="w-full">
                 <button type="submit" class="w-full justify-end flex">
-                    Sign up
-                  </button>
+                  Sign up
+                </button>
               </a>
             </div>
           </form>
@@ -868,9 +991,12 @@
           <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
           <div class="w-full md:w-7/12 mt-4">
             <p class="py-2">
-                3TIResearch offers comprehensive market research services and self-service tools to support your business decisions. We are not a consultancy firm and do not provide direct consulting services. Your use of our tools and services is subject to our <a href="#" class="underline">Terms of Use</a> and <a href="#" class="underline">Privacy Policy</a>.
-               
-              .
+              3TIResearch offers comprehensive market research services and
+              self-service tools to support your business decisions. We are not
+              a consultancy firm and do not provide direct consulting services.
+              Your use of our tools and services is subject to our
+              <a href="#" class="underline">Terms of Use</a> and
+              <a href="#" class="underline">Privacy Policy</a>. .
             </p>
             <p class="py-4">Your Privacy Choices</p>
           </div>
@@ -887,7 +1013,6 @@
     <!-- JavaScript for Toggle Menu -->
     <script>
       AOS.init();
-
 
       function googleTranslateElementInit() {
         new google.translate.TranslateElement(
@@ -987,7 +1112,6 @@
 
       document.querySelectorAll(".faq-item").forEach((item) => {
         item.addEventListener("click", () => {
-          
           const answer = item.querySelector(".faq-answer");
           const icon = item.querySelector("i");
           const isOpen = answer.classList.contains("open");
@@ -1025,11 +1149,6 @@
         .addEventListener("click", function () {
           document.getElementById("support-menu").classList.toggle("hidden");
         });
-
-
-
-
-
     </script>
     <script
       type="text/javascript"
