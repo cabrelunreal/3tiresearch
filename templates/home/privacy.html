@@ -1,0 +1,713 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="icon"
+      type="image/png"
+      sizes="64x64"
+      href="https://res.cloudinary.com/dedakscgk/image/upload/v1722448052/3TIgreenPlan_de_travail_1_bhib3u.png"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <title>Privacy - 3tiresearch</title>
+    <style>
+      h2{
+        font-size: 26px;
+        font-weight: 500;
+        color: green;
+        margin: 10px 0;
+      }
+
+      td {
+        border: 1px solid rgb(219, 218, 218);
+        padding: 10px 20px;
+      }
+      .title {
+        font-size: 26px;
+        font-weight: 500;
+        color: green;
+      }
+
+      .footer-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .footer-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .footer-container {
+        position: relative;
+        height: 530px;
+        overflow: hidden;
+      }
+
+      /* Custom styles for FAQ section */
+      .faq-item {
+        cursor: pointer;
+      }
+      .faq-answer {
+        display: none;
+      }
+      .faq-answer.open {
+        display: block;
+      }
+
+      .footer-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        z-index: 10;
+        background-color: rgba(0, 0, 0, 0.6);
+        padding-top: 1rem;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+      }
+
+      .footer-image {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        z-index: 1;
+      }
+
+      .header-container {
+        position: relative;
+        height: 430px;
+        overflow: hidden;
+      }
+
+      .footer-container {
+        position: relative;
+        height: 620px;
+        overflow: hidden;
+      }
+    </style>
+  </head>
+  <body>
+    <div class="w-full bg-green-800 text-white">
+      <div class="w-9/12 mx-auto px-4">
+        <div
+          class="flex flex-row justify-between md:flex-row md:justify-between md:items-center py-1"
+        >
+          <div class="flex flex-col md:flex-row text-sm space-y-1 md:space-y-0">
+            <p class="md:px-4">
+              <a href="mailto:contact@3tiresearch.com;"
+                >contact@3tiresearch.com</a
+              >
+            </p>
+          </div>
+          <div class="flex items-center space-x-4 mt-4 justify-center md:mt-0">
+            <a href="https://www.facebook.com/3tiresearch/" type="_blank"
+              ><i class="fa-brands fa-facebook"></i
+            ></a>
+            <a
+              href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci"
+              type="_blank"
+              ><i class="fa-brands fa-linkedin"></i
+            ></a>
+            <div id="google_translate_element"></div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Header -->
+    <div class="w-full py-2 shadow-md">
+      <div class="w-9/12 mx-auto px-4">
+        <nav class="flex items-center justify-between">
+          <div>
+            <a href="#">
+              <img
+                src="https://res.cloudinary.com/dedakscgk/image/upload/v1722448052/3TIgreenPlan_de_travail_1_bhib3u.png"
+                class="w-32"
+                alt="LOGO"
+              />
+            </a>
+          </div>
+          <div class="block md:hidden">
+            <button id="menu-toggle" class="text-gray-700 focus:outline-none">
+              <i class="fa-solid fa-bars text-2xl"></i>
+            </button>
+          </div>
+          <div class="hidden md:flex py-3 w-full md:w-auto">
+            <ul
+              class="flex flex-col md:flex-row space-y-2 md:space-y-0 md:space-x-4 font-semibold text-gray-700"
+            >
+              <li><a href="index.html" class="home">Home</a></li>
+              <li><a href="about.html">About</a></li>
+              <li><a href="service.html">Services</a></li>
+              <li><a href="contact.html">Contact Us</a></li>
+              <li><a href="articles.html">Articles</a></li>
+            </ul>
+          </div>
+        </nav>
+      </div>
+    </div>
+
+    <!-- Mobile Menu -->
+    <div id="mobile-menu" class="fixed inset-0 bg-white z-50 md:hidden hidden">
+      <div class="flex flex-col items-center pt-10">
+        <button
+          id="menu-close"
+          class="absolute top-4 right-4 text-gray-700 text-2xl"
+        >
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+        <ul class="flex flex-col space-y-4 font-semibold text-gray-700">
+          <li><a href="index.html">Home</a></li>
+          <li><a href="about.html">About</a></li>
+          <li><a href="service.html">Services</a></li>
+          <li><a href="contact.html">Contact Us</a></li>
+          <li><a href="articles.html">Articles</a></li>
+        </ul>
+      </div>
+    </div>
+
+    <main class="w-9/12 m-auto">
+      <h1 class="text-5xl text-center py-12 font-semibold text-green-700">
+        PRIVACY POLOCIES
+      </h1>
+      <div>
+        <h2 class="title">INTRODUCTION</h2>
+        <p class="">
+          Cette étude / recherche est menée par 3TI Research qui est le
+          contrôleur des données. En acceptant de participer à cette recherche,
+          vous acceptez cette utilisation. Nous vous demandons de lire
+          attentivement cette politique de confidentialité. Aux fins de la
+          présente politique, la définition de « renseignements personnels » est
+          une information qui concerne et peut identifier une personne vivante
+          ou une personne morale existante. Aux fins de la présente politique,
+          la définition des `` lois sur la protection des données '' comprend le
+          règlement général sur la protection des données et la loi sur la
+          protection des informations personnelles et toutes les lois
+          applicables.
+        </p>
+      </div>
+
+      <div>
+        <h2 class="title pb-4 pt-8">PRESENTATION DE LA STRUCTURE FIELD</h2>
+        <span class="font-semibold"
+          >1 .Le but de la collecte des données personnelles :
+        </span>
+        <ul>
+          <li class="list-disc ml-8">
+            Mener des recherches en fonction de vos réponses
+          </li>
+          <li class="list-disc ml-8">
+            Vous contacter pour participer à une enquête
+          </li>
+          <li class="list-disc ml-8">
+            Vous sélectionner pour de futures enquêtes
+          </li>
+          <li class="list-disc ml-8">
+            Vous inclure dans notre base de données
+          </li>
+          <li class="list-disc ml-8">
+            Permettez-nous de vous récompenser avec les incitations promises
+          </li>
+        </ul>
+
+        <div class="pt-4">
+          <span class="font-semibold"
+            >2 .Cas d’utilisations et objectifs:
+          </span>
+          <p class="pb-2">
+            Nous avons présenté ci-dessous des informations plus détaillées sur
+            la manière dont nous utilisons vos données personnelles. Nous sommes
+            également tenus par la loi d'expliquer la base juridique du
+            traitement de vos données personnelles. Ces bases juridiques sont
+            répertoriées ci-dessous et peuvent être différentes pour chaque cas
+            d’utilisation :
+          </p>
+          <ul>
+            <li class="list-disc ml-8">
+              nous avons votre consentement pour l'utilisation de vos données
+              personnelles
+            </li>
+            <li class="list-disc ml-8">
+              nous devons utiliser vos données personnelles afin d'exécuter un
+              contrat avec vous
+            </li>
+            <li class="list-disc ml-8">
+              nous devons traiter vos données afin de protéger vos intérêts
+              vitaux ou quelqu'un d'autre
+            </li>
+            <li class="list-disc ml-8">
+              nous devons traiter vos données pour nous conformer à une
+              obligation légale
+            </li>
+            <li class="list-disc ml-8">
+              le traitement est nécessaire pour effectuer une tâche d'intérêt
+              public
+            </li>
+            <li class="list-disc ml-8">
+              l'utilisation de vos données personnelles est nécessaire pour nos
+              intérêts légitimes (ou ceux de nos clients) (auquel cas nous
+              expliquerons quels sont ces intérêts).
+            </li>
+          </ul>
+        </div>
+      </div>
+      <p class="pt-8">
+        Nous ne ferons jamais une fausse représentation de nous-mêmes ou de ce
+        que nous faisons. Si vous recevez un e-mail qui vous concerne,
+        prétendant provenir de nous, veuillez nous le faire savoir comme indiqué
+        ci-dessous dans « Comment nous contacter ». L'objectif principal de
+        notre collecte de vos données personnelles est de mener des études de
+        marché. Lorsque nous vous contactons, généralement par e-mail, courrier,
+        téléphone ou en personne, nous le faisons pour vous inviter à participer
+        à une étude de marché.
+      </p>
+
+      <table class="border w-full my-10 text-[14px]">
+        <thead>
+          <tr>
+            <th class="border w-1/4">Cas</th>
+            <th class="border">Objectif</th>
+            <th class="border w-1/4">Données collectées / traitées</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td>Protection contre la fraude</td>
+            <td>
+              Protection de notre Entreprise Spécification contre comportement
+              ou comportement non conforme à nos conditions générales
+            </td>
+            <td>
+              Adresse IP, les spécifications du navigateur, spécification de
+              l'appareil, adresses postales, adresses email frauduleuses
+            </td>
+          </tr>
+          <tr>
+            <td>Divulgation publique</td>
+            <td>
+              Pour partager ou divulguer ces renseignements en vertu
+              d’assignations comparaitre, de mandat ou d’ordonnance judiciaires
+              ou gouvernementales, ou en vertu d’exigences légales ou
+              réglementaires similaires ou autres ; nous fournirons ces
+              renseignements aux autorités compétentes
+            </td>
+            <td>Identifiant, nom, coordonnées, adresse e-mail, incitation</td>
+          </tr>
+          <tr>
+            <td>Caractère unique de la participation à l’étude</td>
+            <td>
+              Prévention des entrées multiples dans les enquêtes par les mêmes
+              personnes, conformément à nos conditions générales d’utilisation
+            </td>
+            <td>
+              Adresse IP, spécifications du navigateur, spécifications de
+              l'appareil
+            </td>
+          </tr>
+
+          <tr>
+            <td>
+              Suivi des réponses des répondants récurrents (projets spéciaux de
+              concept de recherche)
+            </td>
+            <td>
+              Lorsque vous participez à nos enquêtes, nous utilisons
+              généralement un identifiant temporaire qui rend vos réponses
+              anonymes pour nos clients. Cependant, certains de nos clients ont
+              le besoin spécifique de comprendre comment votre opinion a évolué
+              au fil du temps. Pour ce type de projet spécifique que nous
+              appelons projet de ‘’suivi’’, nous utiliserons des ID persistants
+              et nous le préciserons au début de chacune de ces études. Vos
+              réponses à l’étude seront considérées comme des données
+              personnelles et vous aurez le droit d’y accéder. Ces projets
+              (études) contiendront un avis sur la toute première page de
+              l’étude, afin que vous puissiez les identifier et décider si vous
+              voulez y participer ou non
+            </td>
+            <td>Identificateur unique et persistant propre au projet</td>
+          </tr>
+          <tr>
+            <td>Couplage et enrichissement des données</td>
+            <td>
+              Nous enrichissons les données que nous détenons à votre sujet en
+              associant vos données personnelles à des tiers. Cela nous aidera à
+              améliorer le profil de votre panel et nous assurer que nous
+              sélectionnons des études pertinentes pour vous. Nous utilisons des
+              services d’appariement( c’est-à-dire des tiers spécialisés dans la
+              gestion des données) pour obtenir des informations supplémentaires
+              vous concernant auprès de sources de données publiques et
+              privées(telles que les réseaux sociaux, les détaillants et les
+              services d’abonnement de contenu auprès desquels vous avez un
+              compte) ou pour utiliser vos données personnelles afin de
+              développer de nouveaux types d’ensembles de données
+              anonymes(c’est-à-dire pour compiler vos données globales avec
+              celles des autres consommateurs et créer un nouveau style de vie).
+              Le service d’appariement (notre partenaire) conserve les données
+              personnelles que nous partageons pendant une courte période, les
+              utilise pour rassembler les informations supplémentaires, puis
+              nous renvoie les informations combinées. Les partenaires sont
+              contractuellement tenus de supprimer les données que nous
+              partageons avec eux ou et ne sont pas autorisés à les utiliser
+              d’une autre manière que dans ce but spécifique
+            </td>
+            <td>
+              Identifiant unique persistant, coordonnées, adresse, e-mail,
+              connexion sociale, cookie, identifiant de l’appareil mobile
+            </td>
+          </tr>
+          <tr>
+            <td>
+              Recherche sur le ciblage de la publicité et les achats médias
+            </td>
+            <td>
+              Nous utilisons vos données personnelles pour aider nos clients et
+              fournisseurs à enrichir leurs données à l’aide de techniques de
+              modélisation ressemblantes. Grâce à votre participation à nos
+              enquêtes et à nos données de profil, nous pouvons aider nos
+              clients à améliorer leur ciblage publicitaire et à créer de
+              meilleurs modèles de publicité en ligne, par le biais de la
+              modélisation des ressemblances ou de méthodologie de recherche
+              similaire. Nous utiliserons vos données personnelles que nous
+              recueillons à votre sujet par l’établissement de profils, la
+              participation à des études de recherche ou l’appariement de
+              données afin de les comparer avec des tiers et des plateformes
+              (nos partenaires). Nous incluons des garanties contractuelles pour
+              garantir que vous ne serez pas automatiquement ciblé à la suite de
+              l’utilisation de vos données pour aider à créer un public de
+              ressemblance, et que nos partenaires ne peuvent pas utiliser vos
+              données à toute autre fin
+            </td>
+            <td>
+              Identifiant unique persistant, coordonnées, adresse e-mail,
+              connexion sociale, cookie, identifiant d'appareil mobile
+            </td>
+          </tr>
+          <tr>
+            <td>Exposition et mesure des publicités</td>
+            <td>
+              En plus de l’appariement basé sur les cookies (que vous pouvez
+              contrôler et accepter via votre compte de panel), nous utiliserons
+              les données personnelles que vous nous fournissez, telles que
+              votre adresse e-mail, dans le cadre d’un processus de
+              rapprochement direct avec des tiers (nos clients et partenaires)
+              pour déterminer si vous utilisez ce service (comme les réseaux
+              sociaux, les sites Web, les applications mobiles) pour la
+              recherche de mesure publicitaire dans un but précis. Nous
+              identifierons les publicités auxquelles vous avez pu être exposé
+              sur ces sites et plateformes et mesurerons l’impact de l’attitude
+              de la marque ou de son rappel sur les ventes. Les tiers avec
+              lesquels nous travaillons ne sont pas autorisés à utiliser les
+              données à d’autres fins.
+            </td>
+            <td>
+              Identifiant unique persistant, coordonnées, adresse e-mail,
+              connexion sociale, cookie, identifiant d'appareil mobile
+            </td>
+          </tr>
+          <tr>
+            <td>Contrôle de la qualité</td>
+            <td>Evaluer la performance de nos interviewers</td>
+            <td>Coordonnées de contact</td>
+          </tr>
+        </tbody>
+      </table>
+
+      <p>
+        Lorsque vous participez à notre enquête, nous pouvons vous demander une
+        gamme d'informations, y compris, par exemple, vos opinions personnelles
+        et des informations démographiques, telles que votre âge et la
+        composition de votre foyer. Vous pouvez refuser de répondre à des
+        questions ou vous retirer de votre participation à une étude à tout
+        moment. Nous ne ferons jamais une fausse représentation de nous-mêmes ou
+        de ce que nous faisons. Si vous recevez un e-mail qui vous concerne,
+        prétendant provenir de nous, veuillez-nous en informer comme indiqué
+        ci-dessous dans la section « Comment nous contacter » ci-dessous.
+      </p>
+
+      <h2 class="title pb-4 pt-8">TIERS</h2>
+      <p>
+        Vous pouvez être assuré que nous protégerons votre vie privée. Nous ne
+        rendrons vos informations personnelles accessibles à quiconque sans
+        votre accord, sauf à des fins de recherche uniquement ou si la loi
+        l'exige. Cela inclut votre nom et votre adresse e-mail. Nous pouvons
+        partager vos données personnelles avec des fournisseurs de services
+        tiers, des mesures de l'efficacité des publicités (annonces) en ligne,
+        des médias sociaux, des correspondances de données, des interactions de
+        données, à des fins liées à la recherche, telles que le traitement des
+        données et la réalisation de tirages au sort. ou d'autres incitations.
+        Vos informations personnelles peuvent être collectées, stockées,
+        transférées ou traitées par notre société, ou par des fournisseurs de
+        services tiers à des fins liées à la recherche, telles que le traitement
+        des données et la réalisation de tirages au sort ou d'autres incitations
+        à la fois à l'intérieur et à travers les frontières. Ils sont tous
+        contractuellement tenus de conserver toute information qu'ils collectent
+        et nous divulguent ou, que nous collectons et leur divulguons,
+        confidentiels et doivent les protéger avec des normes et pratiques de
+        sécurité équivalentes aux nôtres.
+      </p>
+      <h2 class="title pb-4 pt-8">EXIGENCES DE CONFIDENTIALITE, DE SECURITE ET DE L’INDUSTRIE </h2>
+      <p>Nous prenons les mesures technologiques et organisationnelles appropriées pour protéger les informations personnelles qui nous sont soumises, à la fois pendant la transmission et une fois que nous les recevons. Nos procédures de sécurité sont conformes aux normes commerciales généralement acceptées 
+
+ 
+
+        Utilisées pour protéger les informations personnelles. Malheureusement, aucune transmission de données ne peut être garantie à 100%. En conséquence, alors que nous nous efforçons de protéger vos données personnelles, nous ne pouvons pas assurer ou garantir la sécurité des informations que vous nous transmettez ou de nos produits ou services en ligne, et vous le faites à vos propres risques. Une fois que nous aurons reçu votre transmission, nous prendrons des mesures raisonnables pour nous assurer que nos systèmes sont sécurisés. 
+        
+        Tous nos employés sont contractuellement tenus de suivre nos politiques et procédures en matière de confidentialité, de sécurité et de confidentialité. 
+        
+        Nous adhérons aux normes et exigences de l'industrie suivantes : 
+        
+        Codes de conduite professionnels ESOMAR Codes de conduite 
+        
+        Professionnels SAMRA / AMRA 
+        
+        Norme internationale de qualité des études de marché ISO 20252 ; 
+        
+        Norme internationale ISO 9001 pour les systèmes de gestion de la qualité ; Norme internationale 
+        
+        ISO 27001 pour la sécurité des données ; </p>
+
+        <h2 class="title pb-4 pt-8">PRECISION </h2>
+        <p>Nous prenons toutes les mesures raisonnables pour conserver les informations personnelles en notre possession ou sous notre contrôle, qui sont utilisées de manière continue, exactes, complètes, à jour et pertinentes, sur la base des informations les plus récentes mises à notre disposition par vous et / ou par notre client. . 
+
+          Nous comptons sur vous pour nous aider à garder vos informations personnelles exactes, complètes et à jour en répondant honnêtement à nos questions et vous êtes responsable de vous assurer que le responsable du traitement (qui peut être nous ou - plus souvent - notre client) est informé de tout changement concernant vos données personnelles. </p>
+
+
+          <h2 class="title pb-4 pt-8">COLLECTE DE DONNEES SUR LES ENFANTS </h2>
+          <p>
+            Lorsque nous collectons des données d'enfants (toutes les personnes âgées de moins de 16 ans au moment de la collecte), nous avons besoin du consentement de leurs parents ou tuteurs légaux. Cela doit être vérifié avec une pièce d'identité de cette personne et ils doivent confirmer qu'aucun autre consentement d'un autre parent ou tuteur n'est requis. 
+
+Les lois locales sur l'âge légal varient selon les pays, ce qui signifie que le consentement peut être requis pour les moins de 18 ans dans certains pays. 
+          </p>
+
+          <h2 class="title pb-4 pt-8">DROITS DES INDIVIDUS </h2>
+          <p>Pour demander l'accès aux données personnelles que nous détenons à votre sujet, vous devez soumettre votre demande par écrit à l'adresse e-mail ou à l'adresse postale indiquée ci-dessous dans `` Comment nous contacter ''. 
+
+            Vous disposez des droits suivants concernant vos données personnelles : </p>
+            <ul>
+              <li class="list-disc ml-8">
+                Droit de changer d'avis et de retirer votre consentement 
+              </li>
+              <li class="list-disc ml-8">
+                Droit d'accès à vos données personnelles 
+              </li>
+              <li class="list-disc ml-8">
+                Droit de rectifier vos données personnelles 
+              </li>
+              <li class="list-disc ml-8">
+                Droit d'effacer vos données personnelles de nos systèmes, sauf si nous avons des raisons d'intérêt légitime pour continuer à traiter les informations 
+              </li>
+              <li class="list-disc ml-8">
+                Droit de transférer vos données personnelles (droit de portabilité) 
+              </li>
+              <li class="list-disc ml-8">
+                Droit de restreindre le traitement de vos données personnelles 
+              </li>
+              <li class="list-disc ml-8">
+                Droit de s'opposer au traitement de vos données personnelles 
+              </li>
+            </ul>
+
+            <h2 class="title pb-4 pt-8">STOCKAGE ET CONSERVATION DES DONNEES </h2>
+            <p>Les informations personnelles ne seront conservées que pendant la période appropriée à leur utilisation prévue et légale, dans ce cas, nous ne conserverons pas les données plus de 12 mois, sauf disposition contraire de la loi. Les informations personnelles qui ne sont plus nécessaires seront éliminées de manière à garantir que leur caractère confidentiel ne soit pas compromis. 
+
+              Dans le cadre du plan de continuité des activités de l'entreprise et comme l'exigent les normes ISO 27001, ISO 9001, ISO 20252 et dans certains cas la loi, nos systèmes électroniques sont sauvegardés et archivés. Ces archives sont conservées pendant une durée définie dans un environnement strictement contrôlé. Une fois expirées, les données sont supprimées et le support physique détruit pour s'assurer que les données sont complètement effacées. </p>
+
+              <h2 class="title pb-4 pt-8">PRISE DE DECISION / PROFILAGE AUTOMATISES </h2>
+              <p>Dans certaines circonstances, nous effectuerons une prise de décision automatisée ou un profilage à votre sujet. Cependant, dans la majorité des cas, cela n'entraînera aucune décision juridiquement significative à votre sujet. Vous avez le droit de faire appel si une décision automatisée prise à votre sujet est juridiquement significative. Si vous avez des questions à ce sujet, veuillez nous contacter. </p>
+
+              <h2 class="title pb-4 pt-8">COMMENT NOUS CONTACTER </h2>
+              <p>Pour toute information complémentaire, vous pouvez nous contacter sur contact@3tiresearch.com Vous pouvez également contacter notre déléguée à la protection des données Erckman TOGNA au <a class="underline" href="mailto:erckman.togna@3tiresearch.com">erckman.togna@3tiresearch.com</a>  Notre délégué à la protection des données surveille notre conformité aux lois sur la protection des données ainsi qu'à notre politique de confidentialité et est notre point de contact pour les autorités de contrôle sur les questions relatives au traitement des données personnelles. </p>
+
+              <h2 class="title pb-4 pt-8">RECLAMATIONS </h2>
+              <p>Les personnes concernées doivent être informées de leur droit de contacter l'Autorité de protection des données : nous devons informer les personnes concernées de leur droit de porter plainte auprès de l'Autorité de protection des données et fournir des détails sur la manière dont elles le font. Incluez tous les divulgateurs requis spécifiques au pays, la réglementation locale. Veuillez nous contacter en utilisant les coordonnées ci-dessus. </p>
+
+              <h2 class="title pb-4 pt-8">NOTIFICATION DES CHANGEMENTS IMPORTANTS </h2>
+              <p>Nous examinons régulièrement notre politique de confidentialité et elle peut être modifiée de temps à autre. Nous aurons toujours la politique la plus à jour à l'adresse indiquée dans votre dépliant de remerciement. Nous enregistrerons la date de la dernière révision de la politique. </p>
+    </main>
+
+    <div class="footer-container mt-24">
+      <div
+        class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content"
+      >
+        <div class="md:w-6/12 m-auto py-8 px-12">
+          <h5 class="text-lg text-center py-4">
+            Get helpful tips and info from our newsletter!
+          </h5>
+          <form action="" class="text-2lg flex">
+            <div class="flex border-b-2 w-full">
+              <input
+                type="text"
+                class="bg-transparent focus:outline-none border-none w-full md:w-full py-1"
+                placeholder="Enter your Email"
+              />
+              <a href="mailto:contact@3tiresearch.com" class="w-full">
+                <button type="submit" class="w-full justify-end flex">
+                  Sign up
+                </button>
+              </a>
+            </div>
+          </form>
+        </div>
+
+        <div
+          class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8"
+        >
+          <!-- Navigation Section -->
+          <div class="w-full md:w-3/12 mb-4 md:mb-0">
+            <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
+            <button
+              id="nav-toggle"
+              class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+            >
+              <span>Navigation</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="nav-menu" class="hidden mt-2 md:block">
+              <ul class="text-lg md:text-sm">
+                <li class="hover:underline">
+                  <a href="index.html" class="home">Home</a>
+                </li>
+                <li class="hover:underline"><a href="about.html">About</a></li>
+                <li class="hover:underline">
+                  <a href="service.html">Services</a>
+                </li>
+                <li class="hover:underline">
+                  <a href="contact.html">Contact Us</a>
+                </li>
+                <li class="hover:underline">
+                  <a href="articles.html">Articles</a>
+                </li>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Services Section -->
+          <div class="w-full md:w-4/12 mb-4 md:mb-0">
+            <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
+            <button
+              id="services-toggle"
+              class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+            >
+              <span>Services</span>
+              <i class="fa-solid fa-chevron-down"></i>
+            </button>
+            <div id="services-menu" class="hidden mt-2 md:block">
+              <ul class="text-lg md:text-sm">
+                <button onclick="redirectToService1()">
+                  <li class="hover:underline cursor-pointer">
+                    Quantitative Services
+                  </li>
+                </button>
+                <button onclick="redirectToService2()">
+                  <li class="hover:underline cursor-pointer">
+                    Independent Quality Control
+                  </li>
+                </button>
+                <button onclick="redirectToService3()">
+                  <li class="hover:underline cursor-pointer">
+                    Programming & Analysis
+                  </li>
+                </button>
+                <button onclick="redirectToService5()">
+                  <li class="hover:underline cursor-pointer">
+                    Qualitative Services
+                  </li>
+                </button>
+                <button onclick="redirectToService6()">
+                  <li class="hover:underline cursor-pointer">
+                    Automation & Visualization data
+                  </li>
+                </button>
+                <button onclick="redirectToService3()">
+                  <li class="hover:underline cursor-pointer">
+                    Type of Quantitative Study
+                  </li>
+                </button>
+              </ul>
+            </div>
+          </div>
+
+          <!-- Support Section -->
+
+          <!-- Logo and Social Icons -->
+          <div class="w-full md:w-3/12">
+            <h5 class="text-lg capitalize py-1">
+              <a href="#">
+                <img
+                  src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png"
+                  class="w-40"
+                  alt="LOGO"
+                />
+              </a>
+            </h5>
+            <div
+              class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0"
+            >
+              <a
+                href="https://www.facebook.com/3tiresearch/"
+                target="_blank"
+                class="social-icon"
+              >
+                <i class="fa-brands fa-facebook text-xl"></i>
+              </a>
+              <a
+                href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci"
+                target="_blank"
+                class="social-icon linkedin"
+              >
+                <i class="fa-brands fa-linkedin text-xl"></i>
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div
+          class="w-9/12 border-t-2 py-12 m-auto text-white"
+          style="font-size: 13px"
+        >
+          <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
+          <div class="w-full md:w-7/12 mt-4">
+            <p class="py-2"> <span class="hidden md:inline">
+              3TIResearch offers comprehensive market research services and self-service tools to 
+              support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
+              Your use of our tools and services is subject to our
+          </span> <a href="privacy.html" class="underline">Privacy Policy</a>.</p>
+            <p class="py-4">Your Privacy Choices</p>
+          </div>
+        </div>
+      </div>
+
+      <img
+        src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png"
+        alt="Background"
+        class="footer-image"
+      />
+    </div>
+  </body>
+</html>

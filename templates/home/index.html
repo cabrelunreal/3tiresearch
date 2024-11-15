@@ -348,7 +348,7 @@
               Discover insights, tools, and resources to elevate your market
               research experience.
             </p>
-            <a href="mailto:contact@3tiresearch.com;"><button class="py-3 bg-green-700 px-8 rounded-md my-4">
+            <a href="mailto:contact@3tiresearch.com"><button class="py-3 bg-green-700 px-8 rounded-md my-4">
               contact us
             </button></a>
             
@@ -1001,7 +1001,7 @@
                 class="bg-transparent focus:outline-none border-none w-full md:w-full py-1"
                 placeholder="Enter your Email"
               />
-              <a href="mailto:contact@3tiresearch.com;" class="w-full">
+              <a href="mailto:contact@3tiresearch.com" class="w-full">
                 <button type="submit" class="w-full justify-end flex">
                   Sign up
                 </button>
@@ -1025,7 +1025,7 @@
             </button>
             <div id="nav-menu" class="hidden mt-2 md:block">
               <ul class="text-lg md:text-sm">
-                <li class="hover:underline"><a href="#" class="home">Home</a></li>
+                <li class="hover:underline"><a href="index.html" class="home">Home</a></li>
                 <li class="hover:underline"><a href="about.html">About</a></li>
                 <li class="hover:underline">
                   <a href="service.html">Services</a>
@@ -1126,14 +1126,11 @@
         >
           <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
           <div class="w-full md:w-7/12 mt-4">
-            <p class="py-2">
-              3TIResearch offers comprehensive market research services and
-              self-service tools to support your business decisions. We are not
-              a consultancy firm and do not provide direct consulting services.
+            <p class="py-2"> <span class="hidden md:inline">
+              3TIResearch offers comprehensive market research services and self-service tools to 
+              support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
               Your use of our tools and services is subject to our
-              
-              <a href="#" class="underline">Privacy Policy</a>. .
-            </p>
+          </span> <a href="privacy.html" class="underline">Privacy Policy</a>.</p>
             <p class="py-4">Your Privacy Choices</p>
           </div>
         </div>
@@ -1154,7 +1151,8 @@
     const elements = document.getElementsByClassName("home"); // No dot before class name
 
     Array.from(elements).forEach((element) => {
-      element.innerText = element.innerText.replace("Home", "Accueil");
+      element.innerText = element.innerText.replace("Maison", "Accueil");
+      element.innerText = element.innerText.replace("Accueil","Home" );
     });
   }
       function googleTranslateElementInit() {
@@ -1167,9 +1165,7 @@
           },
           "google_translate_element"
         );
-
-        // Ensure the toolbar is hidden after the Google Translate widget loads
-        setTimeout(replaceText, 1000);
+        setTimeout(replaceText(),5000)
         
       }
 
