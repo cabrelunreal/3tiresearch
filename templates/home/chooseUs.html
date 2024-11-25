@@ -356,92 +356,161 @@
 
 
 
-      <div class="footer-container mt-24">
-        <div class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content">
-            <div class="md:w-6/12 m-auto py-8 px-12">
-                <h5 class="text-lg text-center py-4">Get helpful tips and info from our newsletter!</h5>
-                <form action="" class="text-2lg flex">
-                    <div class="flex border-b-2 w-full">
-                        <input type="text" class="bg-transparent focus:outline-none border-none w-full md:w-full py-1" placeholder="Enter your Email">
-                        <a href="contact.html"><button type="submit" class="w-24 justify-end flex">Sign up</button></a>
-                    </div>
-                </form>
+      <div class="footer-container">
+        <div
+          class="w-full bg-green-900 opacity-95 text-white pt-3 pb-8 footer-content"
+        >
+          <div class="md:w-6/12 m-auto py-8 px-12">
+            <h5 class="text-lg text-center py-4">
+              Get helpful tips and info from our newsletter!
+            </h5>
+            <form action="" class="text-2lg flex">
+              <div class="flex border-b-2 w-full">
+                <input
+                  type="text"
+                  class="bg-transparent focus:outline-none border-none w-full md:w-full py-1"
+                  placeholder="Enter your Email"
+                />
+                <a href="#" onclick="window.open('mailto:contact@3tiresearch.com.com?subject=Follow your news letter')" class="w-full">
+                  <button type="submit" class="w-full justify-end flex">
+                    Sign up
+                  </button>
+                </a>
+              </div>
+            </form>
+          </div>
+  
+          <div
+            class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8"
+          >
+            <!-- Navigation Section -->
+            <div class="w-full md:w-3/12 mb-4 md:mb-0">
+              <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
+              <button
+                id="nav-toggle"
+                class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+              >
+                <span>Navigation</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div id="nav-menu" class="hidden mt-2 md:block">
+                <ul class="text-lg md:text-sm">
+                  <li class="hover:underline"><a href="index.html" class="home">Home</a></li>
+                  <li class="hover:underline"><a href="about.html">About</a></li>
+                  <li class="hover:underline">
+                    <a href="service.html">Services</a>
+                  </li>
+                  <li class="hover:underline">
+                    <a href="contact.html">Contact Us</a>
+                  </li>
+                  <li class="hover:underline">
+                    <a href="articles.html">Articles</a>
+                  </li>
+                </ul>
+              </div>
             </div>
-
-            <div class="md:w-7/12 w-full m-auto flex flex-col md:flex-row md:justify-between items-center px-12 py-8">
-                <!-- Navigation Section -->
-                <div class="w-full md:w-3/12 mb-4 md:mb-0">
-                    <h5 class="text-lg capitalize py-1 hidden md:block">Navigation</h5>
-                    <button id="nav-toggle" class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                        <span>Navigation</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div id="nav-menu" class="hidden mt-2 md:block">
-                        <ul class="text-lg md:text-sm">
-                            <li class="hover:underline" ><a href="index.html">Home</a></li>
-                            <li class="hover:underline"><a href="about.html">About</a></li>
-                            <li class="hover:underline"><a href="service.html">Services</a></li>
-                            <li class="hover:underline"><a href="contact.html">Contact Us</a></li>
-                            <li class="hover:underline"><a href="articles.html">Articles</a></li>
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Services Section -->
-                <div class="w-full md:w-4/12 mb-4 md:mb-0">
-                    <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
-                    <button id="services-toggle" class="w-full text-left border-b-2  text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden">
-                        <span>Services</span>
-                        <i class="fa-solid fa-chevron-down"></i>
-                    </button>
-                    <div id="services-menu" class="hidden mt-2 md:block">
-                        <ul class="text-lg md:text-sm">
-                            <button onclick="redirectToService1()"><li class="hover:underline cursor-pointer">Quantitative Services</li></button>
-                            <button onclick="redirectToService2()"><li class="hover:underline cursor-pointer">Independent Quality Control</li></button>
-                            <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Programming & Analysis</li></button>
-                            <button onclick="redirectToService5()"><li class="hover:underline cursor-pointer">Qualitative Services</li></button>
-                            <button onclick="redirectToService6()"><li class="hover:underline cursor-pointer">Automation & Visualization data</li></button>
-                            <button onclick="redirectToService3()"><li class="hover:underline cursor-pointer">Type of Quantitative Study</li></button>
-
-                        </ul>
-                    </div>
-                </div>
-
-                <!-- Support Section -->
-               
-
-                <!-- Logo and Social Icons -->
-                <div class="w-full md:w-3/12">
-                    <h5 class="text-lg capitalize py-1">
-                        <a href="index.html">
-                            <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png" class="w-40" alt="LOGO">
-                        </a>
-                    </h5>
-                    <div class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0">
-                        <a href="https://www.facebook.com/3tiresearch/" target="_blank" class="social-icon">
-                            <i class="fa-brands fa-facebook text-xl"></i>
-                        </a>
-                        <a href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci" target="_blank" class="social-icon linkedin">
-                            <i class="fa-brands fa-linkedin text-xl"></i>
-                        </a>
-                    </div>
-                </div>
+  
+            <!-- Services Section -->
+            <div class="w-full md:w-4/12 mb-4 md:mb-0">
+              <h5 class="text-lg capitalize py-1 hidden md:block">Services</h5>
+              <button
+                id="services-toggle"
+                class="w-full text-left border-b-2 text-white py-2 px-4 rounded-md flex justify-between items-center md:hidden"
+              >
+                <span>Services</span>
+                <i class="fa-solid fa-chevron-down"></i>
+              </button>
+              <div id="services-menu" class="hidden mt-2 md:block">
+                <ul class="text-lg md:text-sm">
+                  <button onclick="redirectToService1()">
+                    <li class="hover:underline cursor-pointer">
+                      Quantitative Services
+                    </li>
+                  </button>
+                  <button onclick="redirectToService2()">
+                    <li class="hover:underline cursor-pointer">
+                      Independent Quality Control
+                    </li>
+                  </button>
+                  <button onclick="redirectToService3()">
+                    <li class="hover:underline cursor-pointer">
+                      Programming & Analysis
+                    </li>
+                  </button>
+                  <button onclick="redirectToService5()">
+                    <li class="hover:underline cursor-pointer">
+                      Qualitative Services
+                    </li>
+                  </button>
+                  <button onclick="redirectToService6()">
+                    <li class="hover:underline cursor-pointer">
+                      Automation & Visualization data
+                    </li>
+                  </button>
+                  <button onclick="redirectToService3()">
+                    <li class="hover:underline cursor-pointer">
+                      Type of Quantitative Study
+                    </li>
+                  </button>
+                </ul>
+              </div>
             </div>
-
-            <div class="w-9/12 border-t-2 py-12 m-auto text-white" style="font-size: 13px;">
-                <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
-                <div class="w-full md:w-7/12 mt-4">
-                    <p class="py-2"> <span class="hidden md:inline">
-                        3TIResearch offers comprehensive market research services and self-service tools to 
-                        support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
-                        Your use of our tools and services is subject to our
-                    </span> <a href="privacy.html" class="underline">Privacy Policy</a>.</p>
-                    <p class="py-4">Your Privacy Choices</p>
-                </div>
+  
+            <!-- Support Section -->
+  
+            <!-- Logo and Social Icons -->
+            <div class="w-full md:w-3/12">
+              <h5 class="text-lg capitalize py-1">
+                <a href="index.html">
+                  <img
+                    src="https://res.cloudinary.com/dedakscgk/image/upload/v1709605253/logo_3ti-removebg-preview_dcvahw.png"
+                    class="w-40"
+                    alt="LOGO"
+                  />
+                </a>
+              </h5>
+              <div
+                class="flex space-x-4 mt-4 md:justify-center justify-start px-8 md:px-1 md:mt-0"
+              >
+                <a
+                  href="https://www.facebook.com/3tiresearch/"
+                  target="_blank"
+                  class="social-icon"
+                >
+                  <i class="fa-brands fa-facebook text-xl"></i>
+                </a>
+                <a
+                  href="https://www.linkedin.com/company/3tiresearch/?originalSubdomain=ci"
+                  target="_blank"
+                  class="social-icon linkedin"
+                >
+                  <i class="fa-brands fa-linkedin text-xl"></i>
+                </a>
+              </div>
             </div>
+          </div>
+  
+          <div
+            class="w-9/12 border-t-2 py-12 m-auto text-white"
+            style="font-size: 13px"
+          >
+            <h6 class="">&copy;3TIResearch.com, Inc. All rights reserved.</h6>
+            <div class="w-full md:w-7/12 mt-4">
+              <p class="py-2"> <span class="hidden md:inline">
+                3TIResearch offers comprehensive market research services and self-service tools to 
+                support your business decisions. We are not a consultancy firm and do not provide direct consulting services.
+                Your use of our tools and services is subject to our
+            </span> <a href="privacy.html" class="underline">Privacy Policy</a>.</p>
+              <p class="py-4">Your Privacy Choices</p>
+            </div>
+          </div>
         </div>
-
-        <img src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png" alt="Background" class="footer-image">
+  
+        <img
+          src="https://res.cloudinary.com/dedakscgk/image/upload/v1719703625/enterprise-background_xiwedn.png"
+          alt="Background"
+          class="footer-image"
+        />
     </div>
 
 <!-- JavaScript for Toggle Menu -->
